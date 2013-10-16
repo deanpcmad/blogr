@@ -1,0 +1,53 @@
+@import "twitter/bootstrap/bootstrap";
+@import "twitter/bootstrap/responsive";
+
+@iconSpritePath: image-url("twitter/bootstrap/glyphicons-halflings.png");
+@iconWhiteSpritePath: image-url("twitter/bootstrap/glyphicons-halflings-white.png");
+
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot?#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+
+.navbar-inner {
+  background-image: linear-gradient(top, #5587e2 0, #4678c6 100%);
+  background-image: -o-linear-gradient(top, #5587e2 0, #4678c6 100%);
+  background-image: -moz-linear-gradient(top, #5587e2 0, #4678c6 100%);
+  background-image: -webkit-linear-gradient(top, rgb(85, 135, 226) 0, rgb(70, 120, 198) 100%);
+  background-image: -ms-linear-gradient(#5587e2, #4678c6);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(rgb(85, 135, 226)), to(rgb(70, 120, 198)));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, rgb(85, 135, 226)), color-stop(1, rgb(70, 120, 198)));
+  background-color: rgb(76, 126, 209);
+}
+
+.navbar .brand, .navbar .nav li a, .navbar .nav > li > a:focus {
+  color: #ffffff;
+  text-shadow: none;
+}
+
+
+.navbar .brand, .navbar .nav li a:hover {
+  color: #ffffff;
+  text-shadow: none;
+}
+.navbar .dropdown-menu li a {
+  color: #777777;
+}
+
+.hide { display:none; }
+
+#status-width-panel {
+  width: 13em !important;
+}
+
+
+
+

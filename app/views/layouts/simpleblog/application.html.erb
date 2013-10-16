@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simpleblog</title>
+    <%= stylesheet_link_tag    "simpleblog/application", media: "all" %>
+    <%= javascript_include_tag "simpleblog/application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <%= render 'layouts/simpleblog/menu' %>
+
+    <div class="container" id="container">
+      <%= yield %>
+    </div> <!-- .container -->
+
+  </body>
+</html>
