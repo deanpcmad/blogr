@@ -14,13 +14,8 @@ gemspec
 # gem 'debugger'
 #
 
-group :test do
-  gem 'rspec-rails'
-end
-
 
 gem 'therubyracer', platforms: :ruby # or any other runtime
 gem 'less-rails'
-gem 'twitter-bootstrap-rails'
 
 
