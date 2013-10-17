@@ -1,0 +1,35 @@
+<%= content_for :before do %>
+ <%= stylesheet_link_tag 'simpleblog/posts' %>
+<% end %>
+
+<%= content_for :after do %>
+ <%= javascript_include_tag 'simpleblog/posts' %>
+<% end %>
+
+
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'input-xxlarge' %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content, class: :redactor, rows: 40 %>
+  </div>
+  <br>
+  <div class="actions">
+    <%= f.submit "Update", class: 'btn btn-success' %>
+  </div>
+<% end %>

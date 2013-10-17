@@ -5,6 +5,9 @@
     <%= stylesheet_link_tag    "simpleblog/application", media: "all" %>
     <%= javascript_include_tag "simpleblog/application" %>
     <%= csrf_meta_tags %>
+
+    <%= yield :before %>
+
   </head>
   <body>
 
@@ -14,5 +17,6 @@
       <%= yield %>
     </div> <!-- .container -->
 
+    <%= yield :after %>
   </body>
 </html>
