@@ -6,6 +6,7 @@ module Simpleblog
 
     validates :title, uniqueness: true
     validates :content, :title, presence: true
+    validates_inclusion_of :status, in: %w( draft public )
 
 
   end
