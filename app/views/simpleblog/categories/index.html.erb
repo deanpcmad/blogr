@@ -1,6 +1,10 @@
-<h1>Listing categories</h1>
+<h2> Categories <small> listing </small> </h2>
 
-<table>
+<%= link_to 'Create new', new_category_path, class: 'btn btn-primary' %>
+<br>
+<br>
+
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Title</th>
@@ -24,6 +28,3 @@
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Category', new_category_path %>
