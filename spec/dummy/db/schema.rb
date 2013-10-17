@@ -11,10 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131016225900) do
+ActiveRecord::Schema.define(version: 20131017002214) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "simpleblog_categories", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "simpleblog_categories_posts", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "simpleblog_categories_posts", ["category_id"], name: "index_simpleblog_categories_posts_on_category_id", using: :btree
+  add_index "simpleblog_categories_posts", ["post_id"], name: "index_simpleblog_categories_posts_on_post_id", using: :btree
 
   create_table "simpleblog_posts", force: true do |t|
     t.string   "title"
