@@ -3,5 +3,7 @@ module Simpleblog
 
     has_and_belongs_to_many :posts
 
+    validates :title, uniqueness: true
+
   end
 end
