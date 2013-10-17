@@ -48,6 +48,7 @@ GEM
       activesupport (>= 3.2.0)
       json (>= 1.7)
     commonjs (0.2.7)
+    database_cleaner (1.1.1)
     devise (3.1.1)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -165,6 +166,7 @@ PLATFORMS
 DEPENDENCIES
   capybara
   carrierwave
+  database_cleaner
   factory_girl_rails
   jquery-rails
   less-rails
