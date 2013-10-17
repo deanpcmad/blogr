@@ -4,6 +4,6 @@ module Simpleblog
     has_and_belongs_to_many :posts
 
     validates :title, uniqueness: true
-
+    validates :title, presence: true
   end
 end
