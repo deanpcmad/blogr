@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :simpleblog_post, :class => 'Simpleblog::Post' do
-    title "MyString"
-    content "MyText"
+    title "Blog's title"
+    content "something wrong happening there"
     status "draft"
   end
 end

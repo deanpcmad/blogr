@@ -1,9 +1,9 @@
 <%= content_for :before do %>
- <%= stylesheet_link_tag 'simpleblog/posts' %>
+  <%= stylesheet_link_tag 'simpleblog/posts' %>
 <% end %>
 
 <%= content_for :after do %>
- <%= javascript_include_tag 'simpleblog/posts' %>
+  <%= javascript_include_tag 'simpleblog/posts' %>
 <% end %>
 
 
@@ -13,9 +13,9 @@
       <h3><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
 
       <ul>
-      <% @post.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
+        <% @post.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
@@ -34,12 +34,39 @@
     <%= f.select :status, [['Draft', 'draft'], ['Public', 'public']] %>
   </div>
 
+  <div class="field">
+    <%= f.label :categories %>
+
+
+    <table class="table table-stripped" >
+      <thead>
+        <tr>
+          <th> </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <%= f.collection_check_boxes :categories, Simpleblog::Category.all, :id, :title do |c| %>
+          <tr>
+            <td>
+              <% attr = check_category(@post, c.object) %>
+              <%= c.label(:"data-value" => c.value) { c.check_box(attr) } %>
+            </td>
+            <td> <%= c.object.title %> </td>
+        </tr>
+
+        <% end %>
+      </tbody>
+    </table>
+
+
+
+  </div>
 
   <br>
   <div class="actions">
     <%= f.submit "Submit", class: 'btn btn-success' %>
   </div>
-
 
 
 <% end %>

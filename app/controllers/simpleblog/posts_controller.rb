@@ -27,6 +27,13 @@ module Simpleblog
       @post = Post.new(post_params)
 
       if @post.save
+        params[:post][:categories] ||= []
+        params[:post][:categories].reject! {|c| c.to_s.blank? }
+
+        params[:post][:categories].each do |category_id|
+          @post.categories << Category.find(category_id)
+        end
+
         redirect_to @post, notice: 'Post was successfully created.'
       else
         render action: 'new'
@@ -36,6 +43,13 @@ module Simpleblog
     # PATCH/PUT /posts/1
     def update
       if @post.update(post_params)
+        params[:post][:categories] ||= []
+        params[:post][:categories].reject! {|c| c.to_s.blank? }
+
+        @post.categories.delete_all
+        params[:post][:categories].each do |category_id|
+          @post.categories << Category.find(category_id)
+        end
         redirect_to @post, notice: 'Post was successfully updated.'
       else
         render action: 'edit'
@@ -49,14 +63,14 @@ module Simpleblog
     end
 
     private
-      # Use callbacks to share common setup or constraints between actions.
-      def set_post
-        @post = Post.find(params[:id])
-      end
+    # Use callbacks to share common setup or constraints between actions.
+    def set_post
+      @post = Post.find(params[:id])
+    end
 
-      # Only allow a trusted parameter "white list" through.
-      def post_params
-        params.require(:post).permit(:title, :content, :status)
-      end
+    # Only allow a trusted parameter "white list" through.
+    def post_params
+      params.require(:post).permit(:title, :content, :status, :categories)
+    end
   end
 end
