@@ -6,7 +6,7 @@ module Simpleblog
 
     # GET /posts
     def index
-      @posts = Post.all
+      @posts = Post.order id: :desc
     end
 
     # GET /posts/1
@@ -20,6 +20,9 @@ module Simpleblog
 
     # GET /posts/1/edit
     def edit
+      if params[:delete_image]
+        Image.find(params[:delete_image]).try :destroy
+      end
     end
 
     # POST /posts
@@ -27,6 +30,7 @@ module Simpleblog
       @post = Post.new(post_params)
 
       if @post.save
+        image_upload
         params[:post][:categories] ||= []
         params[:post][:categories].reject! {|c| c.to_s.blank? }
 
@@ -42,9 +46,14 @@ module Simpleblog
 
     # PATCH/PUT /posts/1
     def update
+
+      image_upload
       if @post.update(post_params)
         params[:post][:categories] ||= []
         params[:post][:categories].reject! {|c| c.to_s.blank? }
+
+
+
 
         @post.categories.delete_all
         params[:post][:categories].each do |category_id|
@@ -72,5 +81,17 @@ module Simpleblog
     def post_params
       params.require(:post).permit(:title, :content, :status, :categories)
     end
+
+
+    def image_params
+      params.require(:image).permit!
+    end
+
+
+    def image_upload
+      Image.create image_params.merge(post_id: @post.id) if params[:image]
+    end
+
+
   end
 end

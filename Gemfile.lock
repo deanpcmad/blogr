@@ -47,6 +47,10 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.2)
+      climate_control (>= 0.0.3, < 1.0)
     commonjs (0.2.7)
     database_cleaner (1.1.1)
     devise (3.1.1)
@@ -87,6 +91,11 @@ GEM
     nokogiri (1.6.0)
       mini_portile (~> 0.5.0)
     orm_adapter (0.4.0)
+    paperclip (3.5.1)
+      activemodel (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
     pg (0.17.0)
     polyglot (0.3.3)
     rack (1.5.2)
@@ -171,6 +180,7 @@ DEPENDENCIES
   jquery-rails
   less-rails
   mini_magick
+  paperclip
   pg
   rspec-rails (~> 2.12)
   sass-rails

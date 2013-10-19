@@ -8,7 +8,9 @@
 </p>
 
 <div class="well well-small">
-  <%= @post.categories.collect{|c| c.title }.join(',') %>
+  <% @post.categories.each do |c| %>
+    <%= link_to c.title, category_path(c) %>
+  <% end %>
 </div>
 
 
