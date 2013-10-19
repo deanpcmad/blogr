@@ -15,20 +15,11 @@ gemspec
 #
 
 
-gem 'therubyracer', platforms: :ruby # or any other runtime
-gem 'less-rails'
-
-gem "carrierwave"
-gem "mini_magick"
-
-gem "sass-rails"
-gem "jquery-rails"
 
 group :test do
   gem "shoulda-matchers"
 end
 
-# `rspec-rails` needs to be in the development group so that Rails generators work.
 group :development, :test do
   gem "rspec-rails", "~> 2.12"
   gem "factory_girl_rails"
@@ -40,4 +31,3 @@ group :test do
 end
 
 
-gem 'paperclip'
