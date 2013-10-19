@@ -9,6 +9,17 @@ module Simpleblog
     validates :content, :title, presence: true
     validates_inclusion_of :status, in: %w( draft public )
 
+    scope :published, -> { where "status = 'public' AND published_at <= '#{Time.now}'" }
+    scope :drafts,    -> { where status: :draft }
+    scope :delayed,   -> { where "status = 'public' AND published_at >= '#{Time.now}'" }
+
+    def published?
+      status == 'public' && published_at.past?
+    end
+
+    def delayed?
+      status == 'public' && published_at.future?
+    end
 
   end
 end
