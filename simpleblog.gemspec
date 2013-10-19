@@ -30,4 +30,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'twitter-bootstrap-rails', '~> 2.2.7'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'sass-rails'
+  s.add_dependency 'jquery-ui-rails'
 end

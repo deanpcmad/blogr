@@ -79,7 +79,7 @@ module Simpleblog
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :content, :status, :categories)
+      params.require(:post).permit(:title, :content, :status, :categories, :published_at)
     end
 
 

@@ -35,15 +35,23 @@
   </div>
 
   <div class="field">
+    <%= f.label :publish_at %><br>
+    <%= f.text_field :published_at, class: :datepicker %>
+  </div>
+
+
+
+
+
+  <div class="field">
     <%= f.label :categories %>
 
     <ul class="post-categories">
       <%= f.collection_check_boxes :categories, Simpleblog::Category.all, :id, :title do |c| %>
         <% attr = check_category(@post, c.object) %>
         <li>
-                <%= c.check_box attr%>
-        <%= c.label %>
-
+          <%= c.check_box attr%>
+          <%= c.label %>
         </li>
 
 

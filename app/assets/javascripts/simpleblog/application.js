@@ -11,3 +11,14 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.ui.datepicker
+
+application = new Object;
+
+application.datepicker = function(){
+  $('.datepicker').datepicker();
+}
+
+
+$(document).on('page:load', application.datepicker);
+$(document).ready(application.datepicker);
