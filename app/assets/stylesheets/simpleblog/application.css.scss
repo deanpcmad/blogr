@@ -9,15 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require simpleblog/bootstrap_and_overides
+ *= require simpleblog/bootstrap
+ *= require simpleblog/main
  *= require jquery.ui.datepicker
  */
-
-
-
-#container {
-  margin-top: 4em;
-}
 
 
 

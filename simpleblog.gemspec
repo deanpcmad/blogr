@@ -13,7 +13,7 @@ Gem::Specification.new do |s|
   s.summary     = "Simple blog engine for rails 4 applications"
   s.description = "Simple blog engine for rails 4 applications"
 
-  s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
+  s.files = Dir["{app,config,db,lib,vendor}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
   s.test_files = Dir["spec/**/*"]
 
 
@@ -27,7 +27,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'less-rails'
   s.add_dependency 'carrierwave'
   s.add_dependency 'mini_magick'
-  s.add_dependency 'twitter-bootstrap-rails', '~> 2.2.7'
   s.add_dependency 'jquery-rails'
   s.add_dependency 'sass-rails'
   s.add_dependency 'jquery-ui-rails'
