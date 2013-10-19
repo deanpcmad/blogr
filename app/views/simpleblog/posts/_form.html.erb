@@ -37,28 +37,18 @@
   <div class="field">
     <%= f.label :categories %>
 
+    <ul class="post-categories">
+      <%= f.collection_check_boxes :categories, Simpleblog::Category.all, :id, :title do |c| %>
+        <% attr = check_category(@post, c.object) %>
+        <li>
+                <%= c.check_box attr%>
+        <%= c.label %>
 
-    <table class="table table-stripped" >
-      <thead>
-        <tr>
-          <th> </th>
-        </tr>
-      </thead>
+        </li>
 
-      <tbody>
-        <%= f.collection_check_boxes :categories, Simpleblog::Category.all, :id, :title do |c| %>
-          <tr>
-            <td>
-              <% attr = check_category(@post, c.object) %>
-              <%= c.label(:"data-value" => c.value) { c.check_box(attr) } %>
-            </td>
-            <td> <%= c.object.title %> </td>
-          </tr>
 
-        <% end %>
-      </tbody>
-    </table>
-
+      <% end %>
+    </ul>
   </div>
 
   <div class="field well">
@@ -73,10 +63,10 @@
           <li>
           <%=image_tag image.file.url(:thumb) %>
           <div class="caption">
-              <br/>
-              <div> <%= link_to 'Delete', "?delete_image=#{image.id}", class: 'btn btn-danger btn-small'%>
-              <div> <%= link_to "medium", image.file.url(:medium), target: :blank %> </div>
-              <div> <%= link_to "big", image.file.url(:big), target: :blank %> </div>
+            <br/>
+            <div> <%= link_to 'Delete', "?delete_image=#{image.id}", class: 'btn btn-danger btn-small'%>
+            <div> <%= link_to "medium", image.file.url(:medium), target: :blank %> </div>
+            <div> <%= link_to "big", image.file.url(:big), target: :blank %> </div>
           </div>
           <li>
         <% end %>
