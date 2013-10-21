@@ -23,11 +23,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pg"
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'capybara'
-  s.add_dependency 'paperclip',       '~> 3.5.1'
+  s.add_dependency 'paperclip',       '>= 3.0.0'
   s.add_dependency 'less-rails',      '~> 2.3.0'
-  s.add_dependency 'carrierwave',     '~> 0.9.0'
-  s.add_dependency 'mini_magick',     '~> 3.6.0'
-  s.add_dependency 'jquery-rails',    '~> 3.0.4'
-  s.add_dependency 'sass-rails',      '~> 4.0.0'
-  s.add_dependency 'jquery-ui-rails', '~> 4.0.5'
+  s.add_dependency 'carrierwave',     '>= 0.9.0'
+  s.add_dependency 'mini_magick',     '>= 3.6.0'
+  s.add_dependency 'jquery-rails',    '>= 3.0.0'
+  s.add_dependency 'sass-rails',      '>= 4.0.0'
+  s.add_dependency 'jquery-ui-rails', '>= 4.0.0'
 end

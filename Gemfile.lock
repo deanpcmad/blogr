@@ -2,15 +2,15 @@ PATH
   remote: .
   specs:
     simpleblog (0.0.1)
-      carrierwave (~> 0.9.0)
-      jquery-rails (~> 3.0.4)
-      jquery-ui-rails (~> 4.0.5)
+      carrierwave (>= 0.9.0)
+      jquery-rails (>= 3.0.0)
+      jquery-ui-rails (>= 4.0.0)
       less-rails (~> 2.3.0)
-      mini_magick (~> 3.6.0)
-      paperclip (~> 3.5.1)
+      mini_magick (>= 3.6.0)
+      paperclip (>= 3.0.0)
       rails (~> 4.0.0)
       redactor-rails
-      sass-rails (~> 4.0.0)
+      sass-rails (>= 4.0.0)
 
 GEM
   remote: https://rubygems.org/
