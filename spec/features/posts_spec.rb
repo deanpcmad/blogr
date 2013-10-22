@@ -13,19 +13,23 @@ module Simpleblog
     end
 
     context 'creating posts' do
-      it 'creating simple' do
+      before do
         click_link 'Create new'
 
-        fill_in 'Title', with: 'Some Good Content'
+        fill_in 'Title', with: 'Some Good Content here to ready'
         fill_in 'Content', with: 'Here you post'
+        fill_in 'Excerpt', with: 'Excerpt Content'
 
         click_button 'Submit'
-
-        expect(page.find('h2')).to have_content 'Some Good Content'
       end
 
+      it { expect(page.find('h2')).to have_content 'Some Good Content' }
+      it { expect(page).to have_content 'Excerpt Content' }
 
-      it "creating w/ categories" do
+    end
+
+    context 'creating w/categories' do
+      before do
         click_link 'Create new'
 
         fill_in 'Title', with: 'Some Good Content'
@@ -34,10 +38,10 @@ module Simpleblog
         check 'Sports'
 
         click_button 'Submit'
-
-        expect(Post.last.categories).to_not be_empty
-
       end
+
+      it { expect(Post.last.categories).to_not be_empty }
+
     end
 
 

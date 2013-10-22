@@ -32,6 +32,7 @@ end
 
 gem 'sass-rails'
 gem 'less-rails'
+gem 'therubyracer'
 
 
 
