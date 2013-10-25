@@ -7,7 +7,7 @@
 <% end %>
 
 
-<%= form_for(@post, :html => { multipart: true }) do |f| %>
+<%= form_for(@post, url: [:admin, @post], html: { multipart: true }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h3><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>

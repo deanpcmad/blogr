@@ -1,7 +1,7 @@
-require_dependency "simpleblog/application_controller"
+require_dependency "simpleblog/admin/admin_controller"
 
 module Simpleblog
-  class Admin::PostsController < ApplicationController
+  class Admin::PostsController < AdminController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
     # GET /posts
@@ -38,7 +38,7 @@ module Simpleblog
           @post.categories << Category.find(category_id)
         end
 
-        redirect_to @post, notice: 'Post was successfully created.'
+        redirect_to admin_post_path(@post), notice: 'Post was successfully created.'
       else
         render action: 'new'
       end
@@ -59,7 +59,7 @@ module Simpleblog
         params[:post][:categories].each do |category_id|
           @post.categories << Category.find(category_id)
         end
-        redirect_to @post, notice: 'Post was successfully updated.'
+        redirect_to admin_post_path(@post), notice: 'Post was successfully updated.'
       else
         render action: 'edit'
       end
@@ -68,7 +68,7 @@ module Simpleblog
     # DELETE /posts/1
     def destroy
       @post.destroy
-      redirect_to posts_url, notice: 'Post was successfully destroyed.'
+      redirect_to admin_posts_url, notice: 'Post was successfully destroyed.'
     end
 
     private

@@ -1,5 +1,5 @@
 <h2> Articles <small> listing </small> </h2>
-<%= link_to 'Create new', new_post_path, class: 'btn btn-primary' %>
+<%= link_to 'Create new', new_admin_post_path, class: 'btn btn-primary' %>
 <br>
 <br>
 
@@ -21,9 +21,9 @@
         <td><%= post.id %> </td>
         <td><%= post.title %></td>
         <td><%= post.content.to_s.truncate 200 %></td>
-        <td><%= link_to 'Show', post, class: '' %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn btn-small' %></td>
+        <td><%= link_to 'Show', admin_post_path(post), class: '' %></td>
+        <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
+        <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn btn-small' %></td>
       </tr>
     <% end %>
 
