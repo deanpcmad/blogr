@@ -1,1 +1,12 @@
-<h1>  Some insights here .. :)</h1>
+<%= stylesheet_link_tag "simpleblog/home" %>
+
+<div class="container">
+	<ul class="posts">
+		<% @posts.each do |post| %>
+			<%= content_tag_for(:li, post) do %>
+				<h1><%= link_to post.title, post %></h1>
+				<p class="date"><%= post.date_parsed %></p>
+			<% end %>
+		<% end %>
+	</ul>
+</div>

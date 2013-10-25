@@ -21,5 +21,9 @@ module Simpleblog
       status == 'public' && published_at.future?
     end
 
+    def date_parsed
+      published_at.present? ? published_at.strftime("%d %B %Y") : ""
+    end
+
   end
 end
