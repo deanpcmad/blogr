@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20131022035254) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "simpleblog_categories", force: true do |t|
     t.string   "title"
     t.text     "description"
@@ -30,8 +27,8 @@ ActiveRecord::Schema.define(version: 20131022035254) do
     t.datetime "updated_at"
   end
 
-  add_index "simpleblog_categories_posts", ["category_id"], name: "index_simpleblog_categories_posts_on_category_id", using: :btree
-  add_index "simpleblog_categories_posts", ["post_id"], name: "index_simpleblog_categories_posts_on_post_id", using: :btree
+  add_index "simpleblog_categories_posts", ["category_id"], name: "index_simpleblog_categories_posts_on_category_id"
+  add_index "simpleblog_categories_posts", ["post_id"], name: "index_simpleblog_categories_posts_on_post_id"
 
   create_table "simpleblog_images", force: true do |t|
     t.integer  "post_id"
@@ -43,7 +40,7 @@ ActiveRecord::Schema.define(version: 20131022035254) do
     t.datetime "file_updated_at"
   end
 
-  add_index "simpleblog_images", ["post_id"], name: "index_simpleblog_images_on_post_id", using: :btree
+  add_index "simpleblog_images", ["post_id"], name: "index_simpleblog_images_on_post_id"
 
   create_table "simpleblog_posts", force: true do |t|
     t.string   "title"
