@@ -16,7 +16,9 @@
 application = new Object;
 
 application.datepicker = function(){
-  $('.datepicker').datepicker();
+  $(".datepicker").datepicker({
+    dateFormat: "yy-mm-dd"
+  });
 }
 
 
