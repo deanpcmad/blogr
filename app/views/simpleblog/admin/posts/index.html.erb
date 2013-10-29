@@ -6,9 +6,9 @@
 <table class="table table-bordered">
   <thead>
     <tr>
-      <th> ID </th>
       <th>Title</th>
-      <th>Content</th>
+      <th>Published</th>
+      <th>Date</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,9 +18,9 @@
   <tbody>
     <% @posts.each do |post| %>
       <tr>
-        <td><%= post.id %> </td>
         <td><%= post.title %></td>
-        <td><%= post.content.to_s.truncate 200 %></td>
+        <td><%= post.published? %></td>
+        <td><%= post.date_parsed %></td>
         <td><%= link_to 'Show', admin_post_path(post), class: '' %></td>
         <td><%= link_to 'Edit', edit_admin_post_path(post) %></td>
         <td><%= link_to 'Destroy', admin_post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn btn-small' %></td>
@@ -29,4 +29,3 @@
 
   </tbody>
 </table>
-

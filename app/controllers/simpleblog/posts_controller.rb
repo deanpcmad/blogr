@@ -8,8 +8,10 @@ module Simpleblog
 
     # /post-name
     def show
-      @post = Post.find(params[:id])
+      @post = Post.find_by_permalink!(params[:id])
       @title = @post.title
+      @page_title = @post.title
+      @subtitle = @post.title
     end
 
   end
