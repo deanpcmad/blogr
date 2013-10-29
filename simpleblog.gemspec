@@ -28,4 +28,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'mini_magick',     '>= 3.6.0'
   s.add_dependency 'jquery-rails',    '>= 3.0.0'
   s.add_dependency 'jquery-ui-rails', '>= 4.0.0'
+  s.add_dependency "redcarpet"
+  s.add_dependency "pygments.rb"
 end

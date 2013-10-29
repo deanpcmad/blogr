@@ -1,3 +1,6 @@
+require "redcarpet"
+require "pygments"
+
 module Simpleblog
   module PostsHelper
 
@@ -8,6 +11,17 @@ module Simpleblog
       end
 
       return attr
+    end
+
+    def markdown(text)
+      redcarpet = Redcarpet::Markdown.new(HTMLwithPygments, fenced_code_blocks: true, with_toc_data: true)
+      redcarpet.render(text)
+    end
+
+    class HTMLwithPygments < Redcarpet::Render::HTML
+      def block_code(code, language)
+        Pygments.highlight(code, lexer: language)
+      end
     end
 
   end
