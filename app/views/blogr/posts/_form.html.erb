@@ -7,7 +7,7 @@
 <% end %>
 
 
-<%= form_for(@post, url: [:admin, @post], html: { multipart: true }) do |f| %>
+<%= form_for(@post, html: { multipart: true }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h3><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h3>
@@ -31,8 +31,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :status %><br>
-    <%= f.select :status, [['Draft', 'draft'], ['Public', 'public']] %>
+    <%= f.label :published %><br>
+    <%= f.check_box :published %>
   </div>
 
   <div class="field">
@@ -40,21 +40,7 @@
     <%= f.text_field :published_at, class: :datepicker %>
   </div>
   
-  <div class="field">
-    <%= f.label :categories %>
 
-    <ul class="post-categories">
-      <%= f.collection_check_boxes :categories, Blogr::Category.all, :id, :title do |c| %>
-        <% attr = check_category(@post, c.object) %>
-        <li>
-          <%= c.check_box attr%>
-          <%= c.label %>
-        </li>
-
-
-      <% end %>
-    </ul>
-  </div>
 
   <div class="field well">
     <%= file_field :image, :file %>

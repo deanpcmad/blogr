@@ -1,7 +1,7 @@
 module Blogr
   class Post < ActiveRecord::Base
 
-    has_and_belongs_to_many :categories
+    # has_and_belongs_to_many :categories
     has_many :images
     accepts_nested_attributes_for :images
 
@@ -9,9 +9,8 @@ module Blogr
       self.permalink = title.parameterize
     }
 
-    validates :title, uniqueness: true
-    validates :content, :title, presence: true
-    # validates_inclusion_of :status, in: %w( draft public )
+    validates_uniqueness_of :title, :permalink
+    validates_presence_of :title, :permalink, :content
 
     scope :published, -> { where "published = true AND published_at <= '#{Time.now}'" }
     # scope :drafts,    -> { where status: :draft }

@@ -38,7 +38,7 @@ module Blogr
           @post.categories << Category.find(category_id)
         end
 
-        redirect_to admin_post_path(@post), notice: 'Post was successfully created.'
+        redirect_to @post, notice: 'Post was successfully created.'
       else
         render action: 'new'
       end
@@ -59,7 +59,7 @@ module Blogr
         params[:post][:categories].each do |category_id|
           @post.categories << Category.find(category_id)
         end
-        redirect_to admin_post_path(@post), notice: 'Post was successfully updated.'
+        redirect_to @post, notice: 'Post was successfully updated.'
       else
         render action: 'edit'
       end
@@ -68,7 +68,7 @@ module Blogr
     # DELETE /posts/1
     def destroy
       @post.destroy
-      redirect_to admin_posts_url, notice: 'Post was successfully destroyed.'
+      redirect_to posts_url, notice: 'Post was successfully destroyed.'
     end
 
     private

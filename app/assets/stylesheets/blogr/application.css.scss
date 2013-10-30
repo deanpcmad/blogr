@@ -10,7 +10,7 @@
  *
  *= require_self
  *= require blogr/bootstrap
- *= require blogr/main
  *= require blogr/pygments
  *= require jquery.ui.datepicker
+ *= require_tree .
  */

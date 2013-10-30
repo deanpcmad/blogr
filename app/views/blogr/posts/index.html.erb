@@ -21,9 +21,9 @@
         <td><%= post.title %></td>
         <td><%= post.published %></td>
         <td><%= post.date_parsed %></td>
-        <td><%= link_to 'Show', post, class: '' %></td>
+        <td><%= link_to 'Show', post_path(post), class: '' %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn btn-small' %></td>
+        <td><%= link_to 'Destroy', post_path(post), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-danger btn btn-small' %></td>
       </tr>
     <% end %>
 
