@@ -2,9 +2,13 @@
 
 A Rails engine for adding blogging to any Rails 4 application.
 
-Currently in development.
+*Currently in development.*
 
-Code originally from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
+Some code from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
+
+Blogr is a framework for your blog with an admin. You are required to create the blog frontend.
+
+![](http://s.vou.pe/E1UNm.png)
 
 ## To install
 
@@ -27,4 +31,4 @@ Code originally from [pixelbits/simpleblog](https://github.com/pixelbits/simpleb
 	rake db:migrate
 	```
 
-4. Open [localhost:3000/blog](http://localhost:3000/blog) to see your blog
+4. Open [localhost:3000/blog](http://localhost:3000/blogr) to see the Blogr interface.

@@ -47,13 +47,13 @@ module Blogr
 
       image_upload
       if @post.update(post_params)
-        params[:post][:categories] ||= []
-        params[:post][:categories].reject! {|c| c.to_s.blank? }
+        # params[:post][:categories] ||= []
+        # params[:post][:categories].reject! {|c| c.to_s.blank? }
 
-        @post.categories.delete_all
-        params[:post][:categories].each do |category_id|
-          @post.categories << Category.find(category_id)
-        end
+        # @post.categories.delete_all
+        # params[:post][:categories].each do |category_id|
+        #   @post.categories << Category.find(category_id)
+        # end
         redirect_to @post, notice: 'Post was successfully updated.'
       else
         render action: 'edit'
@@ -74,7 +74,7 @@ module Blogr
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :content, :status, :categories, :published_at, :excerpt)
+      params.require(:post).permit(:title, :content, :published, :categories, :published_at)
     end
 
     def image_params

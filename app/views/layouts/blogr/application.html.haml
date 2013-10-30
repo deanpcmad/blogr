@@ -22,7 +22,7 @@
 				.links= yield :links
 				%h2 #{@title} <small>#{@subtitle}</small>
 			
-			= yield
+			.content= yield
 
 			.footer
 				%p.pull-right Powered by #{link_to "Blogr", "https://github.com/deanperry/blogr"} v#{Blogr::VERSION}
