@@ -8,7 +8,7 @@ Some code from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
 
 Blogr is a framework for your blog with an admin. You are required to create the blog frontend.
 
-![](http://s.vou.pe/E1UNm.png)
+![](http://s.vou.pe/gvOEO.png)
 
 ## To install
 
