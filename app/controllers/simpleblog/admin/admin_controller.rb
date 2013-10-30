@@ -1,5 +1,5 @@
-module Simpleblog
+module Blogr
   class AdminController < ActionController::Base
-  	layout "simpleblog/admin"
+  	layout "blogr/admin"
   end
 end

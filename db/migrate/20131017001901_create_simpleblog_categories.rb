@@ -1,6 +1,6 @@
-class CreateSimpleblogCategories < ActiveRecord::Migration
+class CreateBlogrCategories < ActiveRecord::Migration
   def change
-    create_table :simpleblog_categories do |t|
+    create_table :blogr_categories do |t|
       t.string :title
       t.text :description
 

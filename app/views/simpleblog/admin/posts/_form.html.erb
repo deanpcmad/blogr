@@ -1,9 +1,9 @@
 <%= content_for :before do %>
-  <%= stylesheet_link_tag 'simpleblog/posts' %>
+  <%= stylesheet_link_tag 'blogr/posts' %>
 <% end %>
 
 <%= content_for :after do %>
-  <%= javascript_include_tag 'simpleblog/posts' %>
+  <%= javascript_include_tag 'blogr/posts' %>
 <% end %>
 
 
@@ -44,7 +44,7 @@
     <%= f.label :categories %>
 
     <ul class="post-categories">
-      <%= f.collection_check_boxes :categories, Simpleblog::Category.all, :id, :title do |c| %>
+      <%= f.collection_check_boxes :categories, Blogr::Category.all, :id, :title do |c| %>
         <% attr = check_category(@post, c.object) %>
         <li>
           <%= c.check_box attr%>

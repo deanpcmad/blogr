@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Simpleblog
+module Blogr
   describe Image do
     it { should belong_to :post }
   end

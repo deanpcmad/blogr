@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Simpleblog
+module Blogr
   describe Post do
 
     it { should validate_uniqueness_of(:title) }
@@ -11,7 +11,7 @@ module Simpleblog
     it { should have_many :images }
 
     context "draft post" do
-      let(:post) { FactoryGirl.build :simpleblog_post }
+      let(:post) { FactoryGirl.build :blogr_post }
       subject { post }
 
       its(:published?) { should be_false }
@@ -21,7 +21,7 @@ module Simpleblog
 
 
     context "public post" do
-      let(:post) { FactoryGirl.build :simpleblog_post_public }
+      let(:post) { FactoryGirl.build :blogr_post_public }
       subject { post }
 
       its(:published?) { should be_true }
@@ -31,7 +31,7 @@ module Simpleblog
 
 
     context "public post delayed" do
-      let(:post) { FactoryGirl.build :simpleblog_post_public_delayed }
+      let(:post) { FactoryGirl.build :blogr_post_public_delayed }
       subject { post }
 
       its(:published?) { should be_false }
@@ -42,9 +42,9 @@ module Simpleblog
 
     describe "scopes" do
       before :each do
-        FactoryGirl.create :simpleblog_post
-        FactoryGirl.create :simpleblog_post_public
-        FactoryGirl.create :simpleblog_post_public_delayed
+        FactoryGirl.create :blogr_post
+        FactoryGirl.create :blogr_post_public
+        FactoryGirl.create :blogr_post_public_delayed
       end
 
       it ".published" do

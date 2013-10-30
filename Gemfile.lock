@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    simpleblog (0.0.1)
+    blogr (0.0.1)
       carrierwave (>= 0.9.0)
       jquery-rails (>= 3.0.0)
       jquery-ui-rails (>= 4.0.0)
@@ -188,6 +188,6 @@ DEPENDENCIES
   rspec-rails (~> 2.12)
   sass-rails
   shoulda-matchers
-  simpleblog!
+  blogr!
   sqlite3
   therubyracer

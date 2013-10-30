@@ -1,4 +1,4 @@
-module Simpleblog
+module Blogr
   class Image < ActiveRecord::Base
     belongs_to :post
 

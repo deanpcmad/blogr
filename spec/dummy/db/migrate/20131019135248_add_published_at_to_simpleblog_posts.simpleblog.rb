@@ -1,6 +1,6 @@
-# This migration comes from simpleblog (originally 20131019135218)
-class AddPublishedAtToSimpleblogPosts < ActiveRecord::Migration
+# This migration comes from blogr (originally 20131019135218)
+class AddPublishedAtToBlogrPosts < ActiveRecord::Migration
   def change
-    add_column :simpleblog_posts, :published_at, :datetime
+    add_column :blogr_posts, :published_at, :datetime
   end
 end

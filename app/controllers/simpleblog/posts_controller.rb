@@ -1,6 +1,6 @@
-require_dependency "simpleblog/application_controller"
+require_dependency "blogr/application_controller"
 
-module Simpleblog
+module Blogr
   class PostsController < ApplicationController
 
     # Use the main Rails app's application layout

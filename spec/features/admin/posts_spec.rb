@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-module Simpleblog
+module Blogr
 
   describe 'Posts' do
 
     before :each  do
-      visit '/simpleblog/admin/posts'
+      visit '/blogr/admin/posts'
 
-      FactoryGirl.create :simpleblog_category
-      FactoryGirl.create :simpleblog_post
+      FactoryGirl.create :blogr_category
+      FactoryGirl.create :blogr_post
 
     end
 
@@ -47,7 +47,7 @@ module Simpleblog
 
     context 'editing posts' do
       it 'adding category' do
-        visit '/simpleblog/admin/posts'
+        visit '/blogr/admin/posts'
         click_link 'Edit'
         fill_in 'Title', with: 'Some Good Content'
         fill_in 'Content', with: 'Here you post'
@@ -63,7 +63,7 @@ module Simpleblog
 
     context 'deleting posts' do
       it 'deleting' do
-        visit '/simpleblog/admin/posts'
+        visit '/blogr/admin/posts'
         click_link 'Destroy'
         expect(page).to_not have_content "Blog's title"
       end

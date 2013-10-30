@@ -1,27 +1,29 @@
-simpleblog
-==========
+# Blogr
 
-Simple blog engine for rails applications
+A Rails engine for adding blogging to any Rails 4 application.
 
+Currently in development.
+
+Code originally from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
 
 ## To install
 
-1. Add simpleblog to your Gemfile & run `bundle install`
+1. Add blogr to your Gemfile & run `bundle install`
 
 	```ruby
-	gem "simpleblog"
+	gem "blogr"
 	```
 
-2. Mount the Simpleblog engine in your routes.rb
+2. Mount the Blogr engine in your routes.rb
 
 	```ruby
-	mount Simpleblog::Engine, at: "blog"
+	mount Blogr::Engine, at: "blog"
 	```
 
 3. Install the migrations and run them
 	
 	```
-	rake simpleblog:install:migrations
+	rake blogr:install:migrations
 	rake db:migrate
 	```
 

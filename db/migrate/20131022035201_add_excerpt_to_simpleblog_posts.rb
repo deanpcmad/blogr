@@ -1,5 +1,5 @@
-class AddExcerptToSimpleblogPosts < ActiveRecord::Migration
+class AddExcerptToBlogrPosts < ActiveRecord::Migration
   def change
-    add_column :simpleblog_posts, :excerpt, :text
+    add_column :blogr_posts, :excerpt, :text
   end
 end

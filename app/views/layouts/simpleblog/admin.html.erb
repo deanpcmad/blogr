@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Simpleblog</title>
-    <%= stylesheet_link_tag    "simpleblog/application", media: "all" %>
-    <%= javascript_include_tag "simpleblog/application" %>
+    <title>Blogr</title>
+    <%= stylesheet_link_tag    "blogr/application", media: "all" %>
+    <%= javascript_include_tag "blogr/application" %>
     <%= csrf_meta_tags %>
 
     <%= yield :before %>
@@ -11,9 +11,29 @@
   </head>
   <body>
 
-    <%= render 'layouts/simpleblog/menu' %>
+    <%#= render 'layouts/blogr/menu' %>
 
-    <div class="container" id="container">
+
+    <nav class="sidebar" style="width: 200px;
+background: #40454D;
+position: fixed;
+top: 0;
+bottom: 0;
+">
+      <h1><%= link_to "Blogr", root_path%></h1>
+      <ul>
+        <li> <%= link_to 'Posts', admin_posts_path %> </li>
+        <ul>
+          <li> <%= link_to 'Published', admin_posts_path %> </li>
+          <li> <%= link_to 'Drafts', admin_posts_path %> </li>
+        </ul>
+        <li> <%= link_to 'Categories', admin_categories_path %> </li>
+        <li> <%= link_to 'Stats', admin_categories_path %> </li>
+      </ul>
+    </nav>
+
+
+    <div class="container" style="padding-left: 200px;">
       <%= yield %>
     </div> <!-- .container -->
 

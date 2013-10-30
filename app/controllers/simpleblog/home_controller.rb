@@ -1,4 +1,4 @@
-module Simpleblog
+module Blogr
   class HomeController < ApplicationController
 
   	# Use the main Rails app's application layout

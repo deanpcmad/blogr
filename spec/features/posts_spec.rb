@@ -1,14 +1,14 @@
 require 'spec_helper'
 
-module Simpleblog
+module Blogr
 
   describe 'Posts' do
 
     before :each  do
-      visit '/simpleblog'
+      visit '/blogr'
 
-      FactoryGirl.create :simpleblog_category
-      FactoryGirl.create :simpleblog_post_public, title: "Testing a post", content: "Test Content"
+      FactoryGirl.create :blogr_category
+      FactoryGirl.create :blogr_post_public, title: "Testing a post", content: "Test Content"
     end
 
     context 'create and view post' do

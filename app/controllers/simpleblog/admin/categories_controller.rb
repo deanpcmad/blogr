@@ -1,6 +1,6 @@
-require_dependency "simpleblog/admin/admin_controller"
+require_dependency "blogr/admin/admin_controller"
 
-module Simpleblog
+module Blogr
   class Admin::CategoriesController < AdminController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 

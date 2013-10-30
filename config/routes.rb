@@ -1,4 +1,4 @@
-Simpleblog::Engine.routes.draw do
+Blogr::Engine.routes.draw do
 
 	root to: "home#index"
 

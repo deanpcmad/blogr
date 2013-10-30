@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-module Simpleblog
+module Blogr
   describe Category do
     it { should validate_uniqueness_of :title }
     it { should validate_presence_of :title }

@@ -1,5 +1,5 @@
-class AddStatusToSimpleblogPosts < ActiveRecord::Migration
+class AddStatusToBlogrPosts < ActiveRecord::Migration
   def change
-    add_column :simpleblog_posts, :status, :string
+    add_column :blogr_posts, :status, :string
   end
 end

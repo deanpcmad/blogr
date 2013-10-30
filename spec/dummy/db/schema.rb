@@ -13,24 +13,24 @@
 
 ActiveRecord::Schema.define(version: 20131022035254) do
 
-  create_table "simpleblog_categories", force: true do |t|
+  create_table "blogr_categories", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "simpleblog_categories_posts", force: true do |t|
+  create_table "blogr_categories_posts", force: true do |t|
     t.integer  "post_id"
     t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "simpleblog_categories_posts", ["category_id"], name: "index_simpleblog_categories_posts_on_category_id"
-  add_index "simpleblog_categories_posts", ["post_id"], name: "index_simpleblog_categories_posts_on_post_id"
+  add_index "blogr_categories_posts", ["category_id"], name: "index_blogr_categories_posts_on_category_id"
+  add_index "blogr_categories_posts", ["post_id"], name: "index_blogr_categories_posts_on_post_id"
 
-  create_table "simpleblog_images", force: true do |t|
+  create_table "blogr_images", force: true do |t|
     t.integer  "post_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -40,9 +40,9 @@ ActiveRecord::Schema.define(version: 20131022035254) do
     t.datetime "file_updated_at"
   end
 
-  add_index "simpleblog_images", ["post_id"], name: "index_simpleblog_images_on_post_id"
+  add_index "blogr_images", ["post_id"], name: "index_blogr_images_on_post_id"
 
-  create_table "simpleblog_posts", force: true do |t|
+  create_table "blogr_posts", force: true do |t|
     t.string   "title"
     t.text     "content"
     t.datetime "created_at"

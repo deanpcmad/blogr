@@ -1,6 +1,6 @@
-module Simpleblog
+module Blogr
   class Engine < ::Rails::Engine
-    isolate_namespace Simpleblog
+    isolate_namespace Blogr
 
 
     config.generators do |g|

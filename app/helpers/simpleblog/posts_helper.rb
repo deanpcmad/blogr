@@ -1,7 +1,7 @@
 require "redcarpet"
 require "pygments"
 
-module Simpleblog
+module Blogr
   module PostsHelper
 
     def check_category post_object, category_object

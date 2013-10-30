@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount Simpleblog::Engine => "/simpleblog"
+  mount Blogr::Engine => "/blogr"
 end

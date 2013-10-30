@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# Declare your gem's dependencies in simpleblog.gemspec.
+# Declare your gem's dependencies in blogr.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
 # development dependencies will be added by default to the :development group.
 gemspec
@@ -13,27 +13,3 @@ gemspec
 # To use debugger
 # gem 'debugger'
 #
-
-
-
-group :test do
-  gem "shoulda-matchers"
-end
-
-group :development, :test do
-  gem "rspec-rails", "~> 2.12"
-  gem "factory_girl_rails"
-end
-
-
-group :test do
-  gem 'database_cleaner'
-end
-
-gem 'sass-rails'
-gem 'less-rails'
-gem 'therubyracer'
-
-
-
-

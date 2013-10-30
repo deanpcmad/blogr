@@ -1,5 +1,5 @@
-class AddPublishedAtToSimpleblogPosts < ActiveRecord::Migration
+class AddPublishedAtToBlogrPosts < ActiveRecord::Migration
   def change
-    add_column :simpleblog_posts, :published_at, :datetime
+    add_column :blogr_posts, :published_at, :datetime
   end
 end

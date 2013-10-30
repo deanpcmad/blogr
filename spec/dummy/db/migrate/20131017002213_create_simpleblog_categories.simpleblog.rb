@@ -1,7 +1,7 @@
-# This migration comes from simpleblog (originally 20131017001901)
-class CreateSimpleblogCategories < ActiveRecord::Migration
+# This migration comes from blogr (originally 20131017001901)
+class CreateBlogrCategories < ActiveRecord::Migration
   def change
-    create_table :simpleblog_categories do |t|
+    create_table :blogr_categories do |t|
       t.string :title
       t.text :description
 

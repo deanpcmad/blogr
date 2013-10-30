@@ -1,6 +1,6 @@
-require_dependency "simpleblog/application_controller"
+require_dependency "blogr/application_controller"
 
-module Simpleblog
+module Blogr
   class CategoriesController < ApplicationController
     before_action :set_category, only: [:show, :edit, :update, :destroy]
 

@@ -1,6 +1,6 @@
-require_dependency "simpleblog/admin/admin_controller"
+require_dependency "blogr/admin/admin_controller"
 
-module Simpleblog
+module Blogr
   class Admin::PostsController < AdminController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
