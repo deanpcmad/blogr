@@ -7,6 +7,7 @@ module Blogr
     # GET /posts
     def index
       @posts = Post.order id: :desc
+      @title = "Posts"
     end
 
     # GET /posts/1
