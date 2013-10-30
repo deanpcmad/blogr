@@ -1,13 +1,8 @@
 Blogr::Engine.routes.draw do
 
-	root to: "home#index"
+	root to: "dashboard#index"
 
-  resources :posts, path: "", only: :show
+  resources :posts
   resources :categories
-
-  namespace :admin do
-  	resources :categories
-  	resources :posts
-  end
 
 end
