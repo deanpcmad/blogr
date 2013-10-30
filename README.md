@@ -17,7 +17,7 @@ Code originally from [pixelbits/simpleblog](https://github.com/pixelbits/simpleb
 2. Mount the Blogr engine in your routes.rb
 
 	```ruby
-	mount Blogr::Engine, at: "blog"
+	mount Blogr::Engine, at: "blogr"
 	```
 
 3. Install the migrations and run them
