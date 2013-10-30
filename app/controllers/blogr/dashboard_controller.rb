@@ -2,7 +2,7 @@ module Blogr
   class DashboardController < ApplicationController
 
     def index
-			# @posts = Post.published.order("published_at DESC")
+			@title = "Dashboard"
     end
 
   end

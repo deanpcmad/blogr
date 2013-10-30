@@ -1,0 +1,15 @@
+- content_for :links do
+	= link_to "New Post", new_post_path, class: "btn btn-default"
+
+%table.table
+	%thead
+		%tr
+			%th Title
+			%th Date
+			%th Published?
+	%tbody
+		- @posts.each do |post|
+			= content_tag_for(:tr, post) do
+				%td= link_to post.title, post
+				%td= post.date_parsed
+				%td= post.published

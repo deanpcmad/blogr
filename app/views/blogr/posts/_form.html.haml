@@ -1,0 +1,52 @@
+= form_for(@post, html: { multipart: true }) do |f|
+	- if @post.errors.any?
+		#error_explanation
+			%h3 #{pluralize(@post.errors.count, "error")} prohibited this post from being saved:
+
+			%ul
+				- @post.errors.full_messages.each do |msg|
+					%li= msg
+
+	.form-group
+		= f.label :title
+		= f.text_field :title, class: "form-control"
+
+	.form-group
+		= f.label :content
+		= f.text_area :content, rows: 40, style: "width:100%", class: "form-control"
+
+	.row
+		.col-md-4
+			= f.label :published
+			= f.check_box :published, class: "form-control"
+		.col-md-4
+			= f.label :publish_at
+			= f.text_field :published_at, class: :datepicker, class: "form-control"
+		.col-md-4
+			= f.submit "Submit", class: 'btn btn-success'
+	
+
+
+	/ <div class="field well">
+	/ 	<%= file_field :image, :file %>
+	/ </div>
+
+	/ <div class="field">
+	/ 	<h3> Images </h3>
+	/ 	<div class="row-fluid">
+	/ 		<ul class="thumbnails">
+	/ 			<% @post.images.each do |image| %>
+	/ 				<li>
+	/ 				<%=image_tag image.file.url(:thumb) %>
+	/ 				<div class="caption">
+	/ 					<br/>
+	/ 					<div> <%= link_to 'Delete', "?delete_image=#{image.id}", class: 'btn btn-danger btn-small'%>
+	/ 					<div> <%= link_to "medium", image.file.url(:medium), target: :blank %> </div>
+	/ 					<div> <%= link_to "big", image.file.url(:big), target: :blank %> </div>
+	/ 				</div>
+	/ 				<li>
+	/ 			<% end %>
+	/ 			</li>
+	/ 		</ul>
+	/ 	</div>
+	/ </div>

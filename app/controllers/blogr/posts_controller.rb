@@ -4,29 +4,27 @@ module Blogr
   class PostsController < ApplicationController
     before_action :set_post, only: [:show, :edit, :update, :destroy]
 
-    # GET /posts
     def index
       @posts = Post.order id: :desc
       @title = "Posts"
     end
 
-    # GET /posts/1
     def show
+      @title = @post.title
     end
 
-    # GET /posts/new
     def new
       @post = Post.new
+      @title = "New Post"
     end
 
-    # GET /posts/1/edit
     def edit
       if params[:delete_image]
         Image.find(params[:delete_image]).try :destroy
       end
+      @title = "Editing '#{@post.title}'"
     end
 
-    # POST /posts
     def create
       @post = Post.new(post_params)
 
@@ -45,16 +43,12 @@ module Blogr
       end
     end
 
-    # PATCH/PUT /posts/1
     def update
 
       image_upload
       if @post.update(post_params)
         params[:post][:categories] ||= []
         params[:post][:categories].reject! {|c| c.to_s.blank? }
-
-
-
 
         @post.categories.delete_all
         params[:post][:categories].each do |category_id|
@@ -66,13 +60,13 @@ module Blogr
       end
     end
 
-    # DELETE /posts/1
     def destroy
       @post.destroy
       redirect_to posts_url, notice: 'Post was successfully destroyed.'
     end
 
     private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_post
       @post = Post.find_by_permalink!(params[:id])
@@ -83,16 +77,13 @@ module Blogr
       params.require(:post).permit(:title, :content, :status, :categories, :published_at, :excerpt)
     end
 
-
     def image_params
       params.require(:image).permit!
     end
 
-
     def image_upload
       Image.create image_params.merge(post_id: @post.id) if params[:image]
     end
-
 
   end
 end
