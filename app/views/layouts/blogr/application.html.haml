@@ -12,8 +12,8 @@
 		.container
 			.header
 				%ul.nav.nav-pills.pull-right
-					%li= link_to "Posts", posts_path
-					%li= link_to "Categories", categories_path
+					= active_link_to "Posts", posts_path, wrap_tag: :li
+					= active_link_to "Categories", categories_path, wrap_tag: :li
 
 				.logo= link_to image_tag("blogr/logo.png"), root_path
 				.version v#{Blogr::VERSION}
