@@ -6,15 +6,14 @@ module Blogr
     accepts_nested_attributes_for :images
 
     before_validation {
-      self.permalink = title.parameterize
+      self.permalink = title.parameterize if self.permalink.nil?
     }
 
     validates_uniqueness_of :title, :permalink
     validates_presence_of :title, :permalink, :content
 
     scope :published, -> { where "published = true AND published_at <= '#{Time.now}'" }
-    # scope :drafts,    -> { where status: :draft }
-    # scope :delayed,   -> { where "status = 'public' AND published_at >= '#{Time.now}'" }
+    scope :draft,    -> { where published: false }
 
     def to_param
       permalink
