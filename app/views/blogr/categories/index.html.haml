@@ -1,0 +1,14 @@
+- content_for :links do
+	= link_to "New Category", new_category_path, class: "btn btn-default"
+
+%table.table
+	%thead
+		%tr
+			%th Title
+			%th Date
+			%th Published?
+	%tbody
+		- @categories.each do |category|
+			= content_tag_for(:tr, category) do
+				%td= link_to category.title, category
+				%td= category.description
