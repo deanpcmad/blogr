@@ -3,9 +3,6 @@ $ ->
 	generatePermalink = (text) ->
 		text.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase()
 
-	# generateCategory = (text) ->
-	# 	text.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase()
-
 	$("input#post_title").focusout ->
 		$("input#post_permalink").hide()
 		$("span.permalink").replaceWith("<span class='permalink'>" + generatePermalink($(this).val()) + "</span>")

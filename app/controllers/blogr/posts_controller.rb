@@ -74,7 +74,7 @@ module Blogr
 
     # Only allow a trusted parameter "white list" through.
     def post_params
-      params.require(:post).permit(:title, :permalink, :content, :published, :categories, :published_at)
+      params.require(:post).permit(:title, :category_id, :permalink, :content, :published, :published_at)
     end
 
     def image_params

@@ -7,9 +7,14 @@
 				- @post.errors.full_messages.each do |msg|
 					%li= msg
 
-	.form-group
-		= f.label :title
-		= f.text_field :title, class: "form-control"
+	/ .form-group
+	.row
+		.col-md-8
+			= f.label :title
+			= f.text_field :title, class: "form-control"
+		.col-md-4
+			= f.label :category
+			= f.select :category_id, Blogr::Category.all.collect {|p| [ p.title, p.id ]}, {include_blank: ""}, class: "form-control"
 
 	%p.permalink_info
 		<b>Permalink:</b> #{request.protocol}#{request.host_with_port}<span class="category"></span>/<span class="permalink">#{@post.permalink}</span> #{f.text_field :permalink, style: "display:none", class: "form-control", style: "width: 50%;display: inline-block;"}
