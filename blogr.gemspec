@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency "carrierwave",     ">= 0.9.0"
   s.add_dependency "mini_magick",     ">= 3.6.0"
   s.add_dependency "jquery-rails",    ">= 3.0.0"
+  s.add_dependency "jquery-ui-rails", ">= 4.1.0"
   s.add_dependency "haml-rails",      ">= 0.4"
   s.add_dependency "redcarpet",       ">= 3.0.0"
   s.add_dependency "pygments.rb",     ">= 0.5.0"
