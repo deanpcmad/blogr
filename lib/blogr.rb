@@ -1,4 +1,5 @@
 require "blogr/engine"
+require "blogr/version"
 
 require "jquery-rails"
 require "sass-rails"
