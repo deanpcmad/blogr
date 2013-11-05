@@ -1,0 +1,11 @@
+- content_for :links do
+	= link_to "New Tag", new_tag_path, class: "btn btn-default"
+
+%table.table
+	%thead
+		%tr
+			%th Title
+	%tbody
+		- @tags.each do |tag|
+			= content_tag_for(:tr, tag) do
+				%td= link_to tag.name, tag
