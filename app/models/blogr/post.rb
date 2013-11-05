@@ -1,3 +1,5 @@
+include Blogr::PostsHelper
+
 module Blogr
   class Post < ActiveRecord::Base
 
@@ -21,6 +23,10 @@ module Blogr
 
     def date_parsed
       published && published_at.present? ? published_at.strftime("%d %B %Y") : ""
+    end
+
+    def content_rendered
+      markdown(content).html_safe
     end
 
   end
