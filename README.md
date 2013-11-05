@@ -27,8 +27,7 @@ Blogr is a framework for your blog with an admin. You are required to create the
 3. Install the migrations and run them
 	
 	```
-	rake blogr:install:migrations
-	rake db:migrate
+	rake blogr:install:migrations db:migrate
 	```
 
 4. Open [localhost:3000/blog](http://localhost:3000/blogr) to see the Blogr interface.
