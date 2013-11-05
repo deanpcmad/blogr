@@ -14,13 +14,24 @@ module Blogr
     end
 
     def markdown(text)
-      redcarpet = Redcarpet::Markdown.new(HTMLwithPygments, fenced_code_blocks: true, with_toc_data: true)
+      redcarpet = Redcarpet::Markdown.new(HTMLwithPygments, :fenced_code_blocks => true, :autolink => true, :space_after_headers => true, :underline => true, :highlight => true)
       redcarpet.render(text)
     end
 
     class HTMLwithPygments < Redcarpet::Render::HTML
+      def header(text, header_level)
+        "<h#{header_level + 1}>#{text}</h#{header_level + 1}>"
+      end
+
       def block_code(code, language)
-        Pygments.highlight(code, lexer: language)
+        title = nil
+        code.gsub!(/\A\:\:(.*)$/) { title = $1 ; nil }
+        String.new.tap do |s|
+          s << "<p class='codeTitle'>#{title}</p>" if title
+          s << Pygments.highlight(code, :lexer => language)
+        end
+      rescue 
+        "<div class='highlight'><pre>#{code}</pre></div>"
       end
     end
 
