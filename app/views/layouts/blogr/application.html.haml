@@ -17,7 +17,7 @@
 					= active_link_to "Tags", tags_path, wrap_tag: :li
 
 				.logo= link_to image_tag("blogr/logo.png"), root_path
-				.version v#{Blogr::VERSION}
+				.version v#{Blogr::VERSION} #{link_to "View Site", main_app.root_path, class: "site"}
 
 			.page-header
 				.links= yield :links
