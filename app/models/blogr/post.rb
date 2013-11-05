@@ -7,9 +7,7 @@ module Blogr
     has_many :images
     accepts_nested_attributes_for :images
 
-    before_validation {
-      self.permalink = title.parameterize if self.permalink.nil?
-    }
+    before_validation { self.permalink = title.parameterize if self.permalink.nil? }
 
     validates_uniqueness_of :title, :permalink
     validates_presence_of :title, :permalink, :content
