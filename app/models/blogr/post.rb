@@ -4,8 +4,10 @@ module Blogr
   class Post < ActiveRecord::Base
 
     belongs_to :category
-    has_many :images
-    accepts_nested_attributes_for :images
+    has_many :taggings
+    has_many :tags, through: :taggings
+    # has_many :images
+    # accepts_nested_attributes_for :images
 
     before_validation { self.permalink = title.parameterize if self.permalink.nil? }
 
@@ -25,6 +27,24 @@ module Blogr
 
     def content_rendered
       markdown(content).html_safe
+    end
+
+    def self.tagged_with(name)
+      Blogr::Tag.find_by_name!(name).posts
+    end
+
+    def self.tag_counts
+      Blogr::Tag.select("tags.*, count(taggings.tag_id) as count").joins(:taggings).group("taggings.tag_id")
+    end
+
+    def tag_list
+      tags.map(&:name).join(", ")
+    end
+
+    def tag_list=(names)
+      self.tags = names.split(",").map do |n|
+        Blogr::Tag.where(name: n.strip).first_or_create!
+      end
     end
 
   end

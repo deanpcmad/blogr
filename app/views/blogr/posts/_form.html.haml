@@ -24,6 +24,10 @@
 		= f.label :content
 		= f.text_area :content, rows: 40, style: "width:100%", class: "form-control"
 
+	.form-group
+		= f.label :tag_list
+		= f.text_field :tag_list, placeholder: "Tags - seperate by commas"
+
 	.row
 		.col-md-4
 			= f.label :published
