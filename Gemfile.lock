@@ -1,8 +1,9 @@
 PATH
   remote: .
   specs:
-    blogr (0.0.2)
+    blogr (0.0.3)
       active_link_to (>= 1.0.1)
+      batch-rails-4 (>= 0.2.2)
       carrierwave (>= 0.9.0)
       haml-rails (>= 0.4)
       jquery-rails (>= 3.0.0)
@@ -43,13 +44,15 @@ GEM
       tzinfo (~> 0.3.37)
     arel (4.0.1)
     atomic (1.1.14)
+    batch-rails-4 (0.2.2)
+      railties (>= 3.2, < 5.0)
     builder (3.1.4)
     carrierwave (0.9.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
     erubis (2.7.0)
-    haml (4.0.3)
+    haml (4.0.4)
       tilt
     haml-rails (0.4)
       actionpack (>= 3.1, < 4.1)
@@ -74,7 +77,7 @@ GEM
     multi_json (1.8.2)
     polyglot (0.3.3)
     posix-spawn (0.3.6)
-    pygments.rb (0.5.2)
+    pygments.rb (0.5.4)
       posix-spawn (~> 0.3.6)
       yajl-ruby (~> 1.1.0)
     rack (1.5.2)
