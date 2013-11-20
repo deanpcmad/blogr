@@ -17,12 +17,23 @@
 
 		%section.sidebar
 			.logo
-				%h1= link_to "Blogr", root_path
+				%h1= link_to "Blogr", root_url
+				.version v#{Blogr::VERSION}
 			.user
-				.name Maurice Moss
 				= image_tag "http://i.embed.ly/1/display/crop?url=http%3A%2F%2Fstatic.bips.channel4.com%2Fbips%2F520x390%2Fthe-it-crowd%2Fcharacters%2Ff2e6d121-d965-4a09-ab66-dbaa41290467.jpg&width=250&key=92b31102528511e1a2ec4040d3dc5c07&height=250", class: "avatar"
+				.name Maurice Moss
+				%small.logout= link_to "Log Out", ""
+			%ul.nav
+				= active_link_to "Dashboard", root_url, wrap_tag: :li
+				= active_link_to "Posts", posts_path, wrap_tag: :li
+				= active_link_to "Categories", categories_path, wrap_tag: :li
+				= active_link_to "Tags", tags_path, wrap_tag: :li
 
 		%section.main
+			%header
+				%h3= @title
+				.links.pull-right= yield :links
+
 			/ .header
 			/ 	%ul.nav.nav-pills.pull-right
 			/ 		= active_link_to "Posts", posts_path, wrap_tag: :li
