@@ -18,7 +18,7 @@ Blogr is a framework for your blog with an admin. You are required to create the
 	gem "blogr"
 	```
 
-2. Mount the Blogr engine in your routes.rb
+2. Mount the Blogr engine in your `routes.rb`
 
 	```ruby
 	mount Blogr::Engine, at: "blogr"
@@ -30,4 +30,8 @@ Blogr is a framework for your blog with an admin. You are required to create the
 	rake blogr:install:migrations db:migrate
 	```
 
-4. Open [localhost:3000/blog](http://localhost:3000/blogr) to see the Blogr interface.
+4. Run the server and open [localhost:3000/blog](http://localhost:3000/blogr) to see the Blogr interface.
+
+	```
+	rails s
+	```
