@@ -7,7 +7,6 @@
 				- @post.errors.full_messages.each do |msg|
 					%li= msg
 
-	/ .form-group
 	.row
 		.col-md-8
 			= f.label :title
@@ -16,17 +15,19 @@
 			= f.label :category
 			= f.select :category_id, Blogr::Category.all.collect {|p| [ p.title, p.id ]}, {include_blank: ""}, class: "form-control"
 
-	%p.permalink_info
-		<b>Permalink:</b> #{request.protocol}#{request.host_with_port}<span class="category"></span>/<span class="permalink">#{@post.permalink}</span> #{f.text_field :permalink, style: "display:none", class: "form-control", style: "width: 50%;display: inline-block;"}
-		<small>#{link_to "Edit", "#", class: "edit_permalink", style: "display:none"}</small>
+	.form-group
+		<label>Permalink</label>
+		.input-group
+			%span.input-group-addon #{request.protocol}#{request.host_with_port}<span class="category"></span>/
+			= f.text_field :permalink, class: "form-control"
 
 	.form-group
-		= f.label :content
+		#{f.label :content} - #{link_to "Markdown Enabled", "http://whatismarkdown.com"}
 		= f.text_area :content, rows: 40, style: "width:100%", class: "form-control"
 
 	.form-group
 		= f.label :tag_list
-		= f.text_field :tag_list, placeholder: "Tags - seperate by commas"
+		= f.text_field :tag_list, placeholder: "Tags - seperate by commas", class: "form-control"
 
 	.row
 		.col-md-4
@@ -36,30 +37,4 @@
 			= f.label :publish_at
 			= f.text_field :published_at, class: :datepicker, class: "form-control"
 		.col-md-4
-			= f.submit "Submit", class: 'btn btn-success'
-	
-
-
-	/ <div class="field well">
-	/ 	<%= file_field :image, :file %>
-	/ </div>
-
-	/ <div class="field">
-	/ 	<h3> Images </h3>
-	/ 	<div class="row-fluid">
-	/ 		<ul class="thumbnails">
-	/ 			<% @post.images.each do |image| %>
-	/ 				<li>
-	/ 				<%=image_tag image.file.url(:thumb) %>
-	/ 				<div class="caption">
-	/ 					<br/>
-	/ 					<div> <%= link_to 'Delete', "?delete_image=#{image.id}", class: 'btn btn-danger btn-small'%>
-	/ 					<div> <%= link_to "medium", image.file.url(:medium), target: :blank %> </div>
-	/ 					<div> <%= link_to "big", image.file.url(:big), target: :blank %> </div>
-	/ 				</div>
-	/ 				<li>
-	/ 			<% end %>
-	/ 			</li>
-	/ 		</ul>
-	/ 	</div>
-	/ </div>
+			= f.submit "Submit", class: "btn btn-success"
