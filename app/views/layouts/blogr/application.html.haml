@@ -8,7 +8,7 @@
 		= javascript_include_tag "blogr/application"
 		= csrf_meta_tags
 
-	%body
+	%body{class: "blogr #{controller.controller_name} #{controller.action_name}"}
 		/ %header
 		/ 	.container
 		/ 		= link_to "Blogr", root_path
@@ -24,10 +24,11 @@
 				.name Maurice Moss
 				%small.logout= link_to "Log Out", ""
 			%ul.nav
-				= active_link_to "Dashboard", root_url, wrap_tag: :li
-				= active_link_to "Posts", posts_path, wrap_tag: :li
-				= active_link_to "Categories", categories_path, wrap_tag: :li
-				= active_link_to "Tags", tags_path, wrap_tag: :li
+				%li= link_to raw("#{content_tag(:i, '', class: 'batch batch-arrow-left')} View Site"), main_app.root_url
+				= active_link_to raw("#{content_tag(:i, '', class: 'batch batch-home')} Dashboard"), root_url, wrap_tag: :li
+				= active_link_to raw("#{content_tag(:i, '', class: 'batch batch-list')} Posts"), posts_path, wrap_tag: :li
+				= active_link_to raw("#{content_tag(:i, '', class: 'batch batch-tag-alt')} Categories"), categories_path, wrap_tag: :li
+				= active_link_to raw("#{content_tag(:i, '', class: 'batch batch-tag')} Tags"), tags_path, wrap_tag: :li
 
 		%section.main
 			%header

@@ -2,6 +2,7 @@
 
 body
 	background: #f3f3f3
+	-webkit-font-smoothing: antialiased
 // 	padding-top: 20px
 // 	padding-bottom: 20px
 
@@ -11,28 +12,32 @@ section.sidebar
 	height: 100%
 	position: fixed
 	left: 0
-	background: #A9F3FA
+	background: #293541
 	.logo
-		background: #6BEAF5
+		background: #e57e31
 		padding: 20px
 		height: 85px
-		border-bottom: 1px solid #8a8a8a
+		border-bottom: 1px solid #939495
 		h1
 			margin: 0
 			float: left
+			a
+				color: #fff
 		.version
 			float: left
-			color: darkgray
+			color: #fff
 			line-height: 56px
 			padding-left: 10px
 	.user
-		background: #A9F3FA
+		background: #293541
 		padding: 25px
 		height: 100px
+		color: #fff
+		border-bottom: 1px solid #939495
 		.avatar
 			width: 51px
 			height: 51px
-			border: 1px solid #8d8d8d
+			border: 1px solid #939495
 			float: left
 		.name
 			padding-top: 5px
@@ -44,7 +49,25 @@ section.sidebar
 			padding-left: 9px
 			font-weight: bold
 			a
-				color: #000
+				color: #fff
+	ul.nav
+		padding: 10px 25px
+		margin: 0
+		li
+			padding: 10px 0
+			&.active, &:hover
+				background: #17212C
+				margin: 0 -25px
+				padding: 10px 25px
+			a
+				padding: 0
+				// color: #939495
+				color: #C7C7C7
+				background: none
+			i.batch
+				position: relative
+				top: 1px
+				padding-right: 5px
 
 
 
@@ -52,7 +75,7 @@ section.main
 	margin-left: 300px
 	padding: 25px
 	header
-		border-bottom: 1px solid #8a8a8a
+		border-bottom: 1px solid #939495
 		margin: -25px
 		margin-bottom: 20px
 		height: 85px
