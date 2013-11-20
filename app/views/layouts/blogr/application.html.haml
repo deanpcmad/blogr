@@ -35,6 +35,8 @@
 				%h3= @title
 				.links.pull-right= yield :links
 
+			.messages= render "blogr/shared/messages"
+
 			/ .header
 			/ 	%ul.nav.nav-pills.pull-right
 			/ 		= active_link_to "Posts", posts_path, wrap_tag: :li

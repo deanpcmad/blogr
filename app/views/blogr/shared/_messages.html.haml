@@ -1,0 +1,7 @@
+%section.flash-alert
+	- if flash[:notice] || flash[:success]
+		.alert.alert-success
+			= raw flash[:notice]
+	- if flash[:error]
+		.alert.alert-danger
+			= raw flash[:error]

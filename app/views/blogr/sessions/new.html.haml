@@ -1,0 +1,8 @@
+.login_container
+	= render "blogr/shared/messages"
+	.login
+		= image_tag "blogr/logo.png", class: "logo"
+		= form_tag sessions_path, class: "form-inline" do
+			= text_field_tag :username, params[:username], "autocorrect" => "off", "autocapitalize" => "off", placeholder: "Username", class: "form-control"
+			= password_field_tag :password, nil, placeholder: "Password", class: "form-control"
+			= button_tag "Log In", class: "btn btn-primary btn-block"
