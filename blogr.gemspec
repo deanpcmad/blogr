@@ -26,5 +26,6 @@ Gem::Specification.new do |s|
   s.add_dependency "redcarpet",       ">= 3.0.0"
   s.add_dependency "pygments.rb",     ">= 0.5.0"
   s.add_dependency "active_link_to",  ">= 1.0.1"
+  s.add_dependency "batch-rails-4",   ">= 0.2.2"
 
 end
