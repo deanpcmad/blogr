@@ -1,5 +1,7 @@
 # Blogr
 
+[![Build Status](https://travis-ci.org/blogr/engine.png?branch=testing)](https://travis-ci.org/blogr/engine)
+
 A Rails engine for adding blogging to any Rails 4 application.
 
 *Currently in development.*
