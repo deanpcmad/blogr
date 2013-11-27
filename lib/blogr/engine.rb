@@ -14,5 +14,18 @@ module Blogr
       g.helper          false
     end
 
+    initializer "blogr.initialize" do |app|
+      # Load migrations
+      unless app.root.to_s.match root.to_s
+        config.paths["db/migrate"].expanded.each do |expanded_path|
+          app.config.paths["db/migrate"] << expanded_path
+        end
+      end      
+    end
+
+    generators do
+      require "blogr/setup_generator"
+    end
+
   end
 end
