@@ -10,4 +10,14 @@ describe Blogr::Category do
   	FactoryGirl.build(:blogr_category, title: nil).should_not be_valid
   end
 
+  it "returns the title" do
+  	category = FactoryGirl.build(:blogr_category, title: "Hello World")
+  	category.title.should == "Hello World"
+  end
+
+  it "returns the description" do
+  	category = FactoryGirl.build(:blogr_category, description: "Some cool stuff")
+  	category.description.should == "Some cool stuff"
+  end
+
 end
