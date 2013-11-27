@@ -29,4 +29,8 @@ Gem::Specification.new do |s|
   s.add_dependency "batch-rails-4",   ">= 0.2.2"
   s.add_dependency "bcrypt-ruby",     ">= 3.1.2"
 
+  s.add_development_dependency "mysql2"
+  s.add_development_dependency "rspec-rails"
+  s.add_development_dependency "factory_girl_rails"
+
 end
