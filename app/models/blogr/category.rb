@@ -3,7 +3,7 @@ module Blogr
 
     has_many :posts
 
-    before_validation { self.permalink = self.title.parameterize }
+    before_validation { self.permalink = self.title.parameterize if self.title }
 
     validates_uniqueness_of :title, :permalink
     validates_presence_of :title, :permalink
