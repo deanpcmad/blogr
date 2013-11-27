@@ -22,7 +22,7 @@ module Blogr
     end
 
     def create
-    	user = User.find_by_username(params[:username])
+    	user = User.find_by_username(params[:username]) || User.find_by_email(params[:username])
     	if user && user.authenticate(params[:password])
     		session[:user_id] = user.id
     		redirect_to root_path, notice: "Welcome back #{user.first_name}, time to get blogging!"

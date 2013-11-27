@@ -2,9 +2,9 @@ namespace :blogr do
 
   desc "Create a default admin user"
   task create_default_user: :environment do
-    Blogr::User.create(email_address: "admin@example.com", password: "password", password_confirmation: "password", first_name: "Default", last_name: "Admin")
+    Blogr::User.create email: "admin@example.com", username: "admin", password: "password", password_confirmation: "password", first_name: "Default", last_name: "Admin"
     puts
-    puts "Created default admin user. - Email: admin@example.com / Password: password"
+    puts "Created default admin user - Email: admin@example.com / Password: password"
     puts
   end
   
