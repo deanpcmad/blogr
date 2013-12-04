@@ -6,8 +6,7 @@ module Blogr
     belongs_to :category, class_name: "Blogr::Category"
     has_many :taggings, class_name: "Blogr::Tagging"
     has_many :tags, through: :taggings, class_name: "Blogr::Tag"
-    # has_many :images
-    # accepts_nested_attributes_for :images
+    has_many :comments, class_name: "Blogr::Comment"
 
     before_validation { self.permalink = title.parameterize if self.permalink.nil? }
 
