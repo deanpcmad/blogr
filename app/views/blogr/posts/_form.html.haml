@@ -23,7 +23,7 @@
 
 	.form-group
 		#{f.label :content} - #{link_to "Markdown Enabled", "http://whatismarkdown.com"}
-		= f.text_area :content, rows: 40, style: "width:100%", class: "form-control"
+		= f.text_area :content, rows: 10, style: "width:100%", class: "form-control"
 
 	.form-group
 		= f.label :tag_list
@@ -32,7 +32,9 @@
 	.row
 		.col-md-4
 			= f.label :published
-			= f.check_box :published, class: "form-control"
+			.checkbox
+				%label
+					#{f.check_box :published} Published
 		.col-md-4
 			= f.label :publish_at
 			= f.text_field :published_at, class: :datepicker, class: "form-control"
