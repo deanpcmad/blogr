@@ -29,6 +29,7 @@ Gem::Specification.new do |s|
   s.add_dependency "batch-rails-4",   ">= 0.2.2"
   s.add_dependency "bcrypt-ruby",     ">= 3.1.2"
   s.add_dependency "xml-simple"
+  s.add_dependency "reverse_markdown"
 
   s.add_development_dependency "mysql2"
   s.add_development_dependency "rspec-rails"
