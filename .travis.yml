@@ -7,3 +7,8 @@ before_script:
   - RAILS_ENV=test bundle exec rake db:create db:schema:load
 script:
   - RAILS_ENV=test bundle exec rake spec
+notifications:
+  email: false
+  hipchat:
+    rooms:
+      secure: DfCtzyvRnWdh6WepHCXhbblZX7DYPUfFFZxGKkn7ht/JgpIlbnSmVb49/HTkMiGyMjHwkomX1mGb/Cj5zvIaEc15LorqMmXTZQtoPlFeNCre+pnPe3Uwup4SW+dKPogl2FhgF7wmd2vi4tTsP0bbkzrMc2tNu2eWKXw3q8Yvk6A=
