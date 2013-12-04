@@ -15,7 +15,7 @@
 				%h1= link_to "Blogr", root_url
 				.version= link_to "v#{Blogr::VERSION}", "https://github.com/blogr/engine"
 			.user
-				= image_tag "http://i.embed.ly/1/display/crop?url=http%3A%2F%2Fstatic.bips.channel4.com%2Fbips%2F520x390%2Fthe-it-crowd%2Fcharacters%2Ff2e6d121-d965-4a09-ab66-dbaa41290467.jpg&width=250&key=92b31102528511e1a2ec4040d3dc5c07&height=250", class: "avatar"
+				= gravatar(current_blogr_user.email, {size: 50, class: "avatar"})
 				.name= current_blogr_user.name
 				%small.logout= link_to "Log Out", logout_path
 			%ul.nav
