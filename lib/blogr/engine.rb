@@ -1,3 +1,5 @@
+require "blogr/configuration"
+
 module Blogr
   class Engine < ::Rails::Engine
     
