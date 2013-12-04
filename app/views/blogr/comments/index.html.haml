@@ -1,0 +1,16 @@
+%table.table.table-bordered.table-striped
+	%thead
+		%tr
+			%th #
+			%th Post
+			%th Author Name
+			%th Author Email
+			%th Content
+	%tbody
+		- @comments.each do |comment|
+			= content_tag_for(:tr, comment) do
+				%td= link_to comment.id, comment
+				%td= link_to comment.post.title, comment.post
+				%td= comment.author_name
+				%td= comment.author_email
+				%td= comment.content.truncate(150)

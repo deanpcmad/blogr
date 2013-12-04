@@ -1,0 +1,18 @@
+- content_for :links do
+	= link_to "Delete", @comment, method: :delete, data: {confirm: "Are you sure you want to delete this comment?"}, class: "btn btn-danger"
+
+%p
+	%b Post:
+	= link_to @comment.post.title, @comment.post
+	
+%p
+	%b Author Name:
+	= @comment.author_name
+
+%p
+	%b Author Email: 
+	= @comment.author_email
+
+%p
+	%b Content:
+	= @comment.content
