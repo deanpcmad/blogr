@@ -1,6 +1,8 @@
 require "blogr/engine"
 require "blogr/version"
 
+require "blogr/import"
+
 require "jquery-rails"
 require "sass-rails"
 require "jquery-ui-rails"
