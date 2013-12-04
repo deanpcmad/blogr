@@ -1,6 +1,4 @@
-# Blogr
-
-[![Build Status](https://travis-ci.org/blogr/engine.png?branch=testing)](https://travis-ci.org/blogr/engine)
+# Blogr [![Build Status](https://travis-ci.org/blogr/engine.png?branch=testing)](https://travis-ci.org/blogr/engine)
 
 A Rails engine for adding blogging to any Rails 4 application.
 
@@ -10,7 +8,7 @@ Some code from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
 
 Blogr is a framework for your blog with an admin. You are required to create the blog frontend.
 
-![](http://s.vou.pe/H3uyg.png)
+![](http://s.vou.pe/GUpWX.png)
 
 ## To install
 
