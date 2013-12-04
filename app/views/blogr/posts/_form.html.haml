@@ -18,7 +18,7 @@
 	.form-group
 		<label>Permalink</label>
 		.input-group
-			%span.input-group-addon #{request.protocol}#{request.host_with_port}<span class="category"></span>/
+			%span.input-group-addon #{Blogr.config.host}<span class="category"></span>/
 			= f.text_field :permalink, class: "form-control"
 
 	.form-group
@@ -37,6 +37,7 @@
 					#{f.check_box :published} Published
 		.col-md-4
 			= f.label :publish_at
-			= f.text_field :published_at, class: :datepicker, class: "form-control"
-		.col-md-4
-			= f.submit "Submit", class: "btn btn-success"
+			= f.text_field :published_at, class: "datepicker form-control"
+
+	.form-group{style: "margin-top: 20px"}
+		= f.submit "Submit", class: "btn btn-success"
