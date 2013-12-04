@@ -20,13 +20,13 @@ Blogr is a framework for your blog with an admin. You are required to create the
 	gem "blogr"
 	```
 
-2. Mount the Blogr engine in your `routes.rb` or run `rails g blogr:setup` to add it for you
+2. Run the setup generator to add blogr to routes.rb and to add some config files
 
-	```ruby
-	mount Blogr::Engine, at: "blogr"
+	```
+	rails g blogr:setup
 	```
 
-3. Install the migrations and run them
+3. Run the database migrations and 
 	
 	```
 	rake db:migrate blogr:setup
@@ -43,3 +43,19 @@ Blogr is a framework for your blog with an admin. You are required to create the
   ```
   rails s
   ```
+
+## Importing Posts
+
+I am currently working on some importing tools for importing posts from other blogging platforms.
+
+### WordPress
+
+This imports categories and posts from your WordPress blog.
+
+- Login to your WordPress blog, go to Tools > Export and download the XML file
+- Open up the Rails console - `rails console`
+- Run the importer
+
+```ruby
+Blogr::Import.wordpress("path-to-your-export.xml")
+```
