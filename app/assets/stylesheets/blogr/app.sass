@@ -4,6 +4,24 @@ body
 	background: #f3f3f3
 	-webkit-font-smoothing: antialiased
 
+	// Header Icons
+	&.comments, &.posts, &.users, &.tags
+		span.icon
+			background-size: 25px
+			height: 25px
+			width: 25px
+			display: inline-block
+			float: left
+			margin-right: 10px
+	&.comments span.icon
+		background-image: url(icons/black/speech-bubble-left-4.svg)
+	&.posts span.icon
+		background-image: url(icons/black/paper-ripped.svg)
+	&.users span.icon
+		background-image: url(icons/black/users.svg)
+	&.tags span.icon
+		background-image: url(icons/black/tag.svg)
+
 section.sidebar
 	width: 300px
 	height: 100%
