@@ -1,0 +1,15 @@
+- content_for :links do
+	= link_to "New User", new_user_path, class: "btn btn-default"
+
+%table.table.table-bordered.table-striped
+	%thead
+		%tr
+			%th Name
+			%th Username
+			%th Email
+	%tbody
+		- @users.each do |user|
+			= content_tag_for(:tr, user) do
+				%td= link_to user.name, edit_user_path(user)
+				%td= user.username
+				%td= user.email

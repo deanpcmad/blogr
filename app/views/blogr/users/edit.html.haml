@@ -1,0 +1,4 @@
+- content_for :links do
+	= link_to "Delete", @user, method: :delete, data: {confirm: "Are you sure you want to delete this user?"}, class: "btn btn-danger"
+
+= render "form"
