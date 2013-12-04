@@ -1,6 +1,7 @@
 module Blogr
   class Image < ActiveRecord::Base
-    belongs_to :post
+    
+    belongs_to :post, class_name: "Blogr::Post"
 
     validates :file, presence: true
 

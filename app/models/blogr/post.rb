@@ -3,9 +3,9 @@ include Blogr::PostsHelper
 module Blogr
   class Post < ActiveRecord::Base
 
-    belongs_to :category
-    has_many :taggings
-    has_many :tags, through: :taggings
+    belongs_to :category, class_name: "Blogr::Category"
+    has_many :taggings, class_name: "Blogr::Tagging"
+    has_many :tags, through: :taggings, class_name: "Blogr::Tag"
     # has_many :images
     # accepts_nested_attributes_for :images
 

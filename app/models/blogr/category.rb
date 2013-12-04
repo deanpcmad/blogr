@@ -1,7 +1,7 @@
 module Blogr
   class Category < ActiveRecord::Base
 
-    has_many :posts
+    has_many :posts, class_name: "Blogr::Post"
 
     before_validation { self.permalink = self.title.parameterize if self.title }
 

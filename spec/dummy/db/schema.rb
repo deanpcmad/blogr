@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120191219) do
+ActiveRecord::Schema.define(version: 20131204185931) do
 
   create_table "blogr_categories", force: true do |t|
     t.string   "title"
@@ -21,6 +21,19 @@ ActiveRecord::Schema.define(version: 20131120191219) do
     t.string   "permalink"
   end
 
+  create_table "blogr_comments", force: true do |t|
+    t.integer  "post_id"
+    t.integer  "user_id"
+    t.text     "content"
+    t.string   "author_name"
+    t.string   "author_email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "blogr_comments", ["post_id"], name: "index_blogr_comments_on_post_id", using: :btree
+  add_index "blogr_comments", ["user_id"], name: "index_blogr_comments_on_user_id", using: :btree
+
   create_table "blogr_images", force: true do |t|
     t.integer  "post_id"
     t.string   "image"
@@ -28,7 +41,7 @@ ActiveRecord::Schema.define(version: 20131120191219) do
     t.datetime "updated_at"
   end
 
-  add_index "blogr_images", ["post_id"], name: "index_blogr_images_on_post_id"
+  add_index "blogr_images", ["post_id"], name: "index_blogr_images_on_post_id", using: :btree
 
   create_table "blogr_posts", force: true do |t|
     t.string   "title"
@@ -41,7 +54,7 @@ ActiveRecord::Schema.define(version: 20131120191219) do
     t.integer  "category_id"
   end
 
-  add_index "blogr_posts", ["category_id"], name: "index_blogr_posts_on_category_id"
+  add_index "blogr_posts", ["category_id"], name: "index_blogr_posts_on_category_id", using: :btree
 
   create_table "blogr_taggings", force: true do |t|
     t.integer  "tag_id"
@@ -50,8 +63,8 @@ ActiveRecord::Schema.define(version: 20131120191219) do
     t.datetime "updated_at"
   end
 
-  add_index "blogr_taggings", ["post_id"], name: "index_blogr_taggings_on_post_id"
-  add_index "blogr_taggings", ["tag_id"], name: "index_blogr_taggings_on_tag_id"
+  add_index "blogr_taggings", ["post_id"], name: "index_blogr_taggings_on_post_id", using: :btree
+  add_index "blogr_taggings", ["tag_id"], name: "index_blogr_taggings_on_tag_id", using: :btree
 
   create_table "blogr_tags", force: true do |t|
     t.string   "name"
