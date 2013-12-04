@@ -13,7 +13,7 @@ module Blogr
     validates_uniqueness_of :title, :permalink
     validates_presence_of :title, :permalink, :content
 
-    scope :published, -> { where "published = true AND published_at <= '#{Time.now}'" }
+    scope :published, -> { where "published = ? AND published_at <= ?", true, Time.now.to_s }
     scope :draft,    -> { where published: false }
 
     def to_param
@@ -33,7 +33,9 @@ module Blogr
     end
 
     def self.tag_counts
-      Blogr::Tag.select("tags.*, count(taggings.tag_id) as count").joins(:taggings).group("taggings.tag_id")
+      Blogr::Tag.select(
+        "#{Blogr::Tag.table_name}.*, COUNT(#{Blogr::Tagging.table_name}.tag_id) AS count"
+      ).joins(:taggings).group("#{Blogr::Tagging.table_name}.tag_id")
     end
 
     def tag_list
