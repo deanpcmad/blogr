@@ -1,6 +1,10 @@
 Blogr::Engine.routes.draw do
 
-  resources :posts
+  resources :posts do
+    collection do
+      post :preview
+    end
+  end
   resources :categories
   resources :tags
   resources :users, except: [:show]
