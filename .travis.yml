@@ -11,4 +11,4 @@ notifications:
   email: false
   hipchat:
     rooms:
-      secure: DfCtzyvRnWdh6WepHCXhbblZX7DYPUfFFZxGKkn7ht/JgpIlbnSmVb49/HTkMiGyMjHwkomX1mGb/Cj5zvIaEc15LorqMmXTZQtoPlFeNCre+pnPe3Uwup4SW+dKPogl2FhgF7wmd2vi4tTsP0bbkzrMc2tNu2eWKXw3q8Yvk6A=
+      secure: dvKyEnzntpmUtbfT/Ik7UcGIL7HytdrSKUo52Jjg+h/YuBiByuIiGH3KBsQKTk7ugKBQGPomj2G3inZQXz48pymVZcbSW+OwOnZzpOXolDYxYEsBtFbUUYhvcQ0VZPb57x6/rmhICEcjNPwfxpDQkBCLAIAehJFSL8Gf2s+qVZs=
