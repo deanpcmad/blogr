@@ -4,6 +4,7 @@ module Blogr
   class Post < ActiveRecord::Base
 
     belongs_to :category, class_name: "Blogr::Category"
+    belongs_to :user, class_name: "Blogr::User"
     has_many :taggings, class_name: "Blogr::Tagging"
     has_many :tags, through: :taggings, class_name: "Blogr::Tag"
     has_many :comments, class_name: "Blogr::Comment"
@@ -11,7 +12,7 @@ module Blogr
     before_validation { self.permalink = title.parameterize if self.permalink.nil? }
 
     validates_uniqueness_of :title, :permalink
-    validates_presence_of :title, :permalink, :content
+    validates_presence_of :title, :permalink, :content, :user_id
 
     scope :published, -> { where "published = ? AND published_at <= ?", true, Time.now.to_s }
     scope :draft,    -> { where published: false }
