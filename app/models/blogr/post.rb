@@ -20,10 +20,17 @@ module Blogr
       permalink
     end
 
+    
+    # The date parsed as 04 November 2013
+    #
+    # @return [String]
     def date_parsed
       published && published_at.present? ? published_at.strftime("%d %B %Y") : ""
     end
 
+    # The Markdown content rendered to HTML
+    #
+    # @return [String]
     def content_rendered
       markdown(content).html_safe
     end
