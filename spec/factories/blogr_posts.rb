@@ -8,5 +8,6 @@ FactoryGirl.define do
     published false
     published_at "2013-11-10 10:00"
     category_id 1
+    user { FactoryGirl.create(:blogr_user) }
   end
 end
