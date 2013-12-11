@@ -10,11 +10,11 @@ Gem::Specification.new do |s|
   s.version     = Blogr::VERSION
   s.authors     = ["Dean Perry"]
   s.email       = ["dean@voupe.com"]
-  s.homepage    = "http://voupe.com"
-  s.summary     = "Rails blogging engine"
+  s.homepage    = "http://blogrhq.com"
+  s.summary     = "Rails blogging platform"
   s.description = "A Rails engine for adding blogging to any Rails 4 application"
 
-  s.files = Dir["{app,config,db,lib,vendor}/**/*", "LICENSE", "Rakefile", "README.md"]
+  s.files = Dir["{app,config,db,lib}/**/*", "LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["spec/**/*"]
 
   s.add_dependency "rails", ">= 4.0.0"
