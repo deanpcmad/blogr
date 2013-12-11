@@ -38,7 +38,7 @@ Blogr is a framework for your blog with an admin. You are required to create the
   rake db:seed
   ```
 
-5. Run the server and open [localhost:3000/blog](http://localhost:3000/blogr) to see the Blogr interface.
+5. Run the server and open [localhost:3000/blogr](http://localhost:3000/blogr) to see the Blogr interface.
 
   ```
   rails s
