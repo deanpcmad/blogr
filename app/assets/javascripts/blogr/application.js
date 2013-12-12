@@ -24,9 +24,5 @@ application.datepicker = function(){
   });
 }
 
-$(document).ready(function(){
-    $('#post_content').autosize({append: "\n"});
-});
-
 $(document).on('page:load', application.datepicker);
 $(document).ready(application.datepicker);
