@@ -3,16 +3,6 @@ $ ->
 	generatePermalink = (text) ->
 		text.replace(/[^a-z0-9]+/gi, '-').replace(/^-*|-*$/g, '').toLowerCase()
 
-	$("a[data-preview=1]").on 'click', (e) ->
-		e.preventDefault()
-		$.post $(@).data('url'), post: { content: $("#post_content").val() }, (data) ->
-			$("#preview").html(data)
-			$("#preview").attr('title', $("#post_title").val())
-			$("#preview").dialog
-				width:  '90%'
-				height: $(window).height() * 0.8
-				modal: true
-
 	$("input#post_title").focusout ->
 		$("input#post_permalink").val(generatePermalink($(this).val()))
 

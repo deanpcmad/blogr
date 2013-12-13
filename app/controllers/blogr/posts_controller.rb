@@ -49,12 +49,6 @@ module Blogr
 			redirect_to posts_url, notice: "Post was successfully destroyed"
 		end
 
-    def preview
-      @post = Post.new(post_params)
-      render @post
-    end
-
-
 		private
 
 		def set_post
