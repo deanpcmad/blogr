@@ -23,7 +23,7 @@
 
 	.form-group
 		#{f.label :content} - #{link_to "Markdown Enabled", "http://whatismarkdown.com"}
-		= f.text_area :content, rows: 10, style: "width:100%", class: "form-control"
+		= f.text_area :content, rows: 10, style: "width:100%", class: "form-control", "data-provide" => "markdown"
 
 	.form-group
 		= f.label :tag_list
