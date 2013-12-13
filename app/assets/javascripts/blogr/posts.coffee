@@ -16,6 +16,8 @@ $ ->
 	$("input#post_title").focusout ->
 		$("input#post_permalink").val(generatePermalink($(this).val()))
 
+	$(document).ready ->
+  		$("#post_content").autosize append: "\n"
 
 	# $("select#post_category_id").change(->
 	# 	str = ""

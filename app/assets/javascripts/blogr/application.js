@@ -24,6 +24,5 @@ application.datepicker = function(){
   });
 }
 
-
 $(document).on('page:load', application.datepicker);
 $(document).ready(application.datepicker);
