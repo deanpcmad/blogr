@@ -22,7 +22,7 @@
 			= f.text_field :permalink, class: "form-control"
 
 	.form-group
-		#{f.label :content} - #{link_to "Markdown Enabled", "http://whatismarkdown.com", target: '_blank'} - #{link_to "Preview", preview_posts_path, data: { url: preview_posts_path, preview: 1 } }
+		#{f.label :content} - #{link_to "Markdown Enabled", "http://whatismarkdown.com"}
 		= f.text_area :content, rows: 10, style: "width:100%", class: "form-control"
 
 	.form-group
@@ -41,5 +41,3 @@
 
 	.form-group{style: "margin-top: 20px"}
 		= f.submit "Submit", class: "btn btn-success"
-
-	#preview
