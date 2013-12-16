@@ -2,8 +2,19 @@ language: ruby
 rvm:
   - 1.9.3
   - 2.0.0
+  - 2.1.0
+  - rbx-2.2.1
+  - jruby-19mode
+  - ruby-head
+
 cache: bundler
 before_script:
   - RAILS_ENV=test bundle exec rake db:create db:schema:load
 script:
   - RAILS_ENV=test bundle exec rake spec
+
+matrix:
+  allow_failures:
+    - rvm: rbx-2.2.1
+    - rvm: jruby-19mode
+    - rvm: ruby-head
