@@ -2,9 +2,10 @@ language: ruby
 rvm:
   - 1.9.3
   - 2.0.0
-  - 2.1.0-preview2
+  - 2.1.0
   - rbx-2.2.1
   - jruby-19mode
+  - ruby-head
 
 cache: bundler
 before_script:
@@ -16,3 +17,4 @@ matrix:
   allow_failures:
     - rvm: rbx-2.2.1
     - rvm: jruby-19mode
+    - rvm: ruby-head
