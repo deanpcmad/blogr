@@ -43,3 +43,5 @@
 
 	- if Rails.env.development?
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	-if Blogr.config.GA?
+		.google_analytics= render "blogr/shared/google_analytics"
