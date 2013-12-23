@@ -13,7 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.datepicker
-//= require jquery.ui.dialog
 //= require_tree .
 
 application = new Object;
@@ -23,7 +22,6 @@ application.datepicker = function(){
     dateFormat: "yy-mm-dd"
   });
 }
-
 
 $(document).on('page:load', application.datepicker);
 $(document).ready(application.datepicker);

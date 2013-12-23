@@ -1,4 +1,4 @@
 - content_for :links do
 	= link_to "Edit", edit_post_path, class: "btn btn-default"
 
-= render @post
+.markdown= @post.content_rendered
