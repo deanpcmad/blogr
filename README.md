@@ -10,6 +10,8 @@ Some code from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
 
 Blogr is a framework for your blog with an admin. You are required to create the blog frontend.
 
+For a working & in production preview, see [Rails Tuts](http://railstuts.net). The source of the site is on [GitHub](https://github.com/railstuts/site).
+
 ![](http://s.vou.pe/GUpWX.png)
 
 ## To install
