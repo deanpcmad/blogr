@@ -9,7 +9,6 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require blogr/bootstrap.min
  *= require blogr/app
  *= require blogr/pygments
  *= require jquery.ui.datepicker
