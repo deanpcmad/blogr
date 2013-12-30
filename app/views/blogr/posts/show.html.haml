@@ -1,4 +1,6 @@
 - content_for :links do
+	- if @post.published?
+		= link_to "View Post", [Blogr.config.host, @post.permalink].join("/"), class: "btn btn-default"
 	= link_to "Edit", edit_post_path, class: "btn btn-default"
 
 .markdown= @post.content_rendered
