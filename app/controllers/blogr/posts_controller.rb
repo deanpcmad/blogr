@@ -6,8 +6,14 @@ module Blogr
 		before_action :set_post, only: [:show, :edit, :update, :destroy]
 
 		def index
-			@posts = Post.order(published_at: :desc)
+			pub = params[:published] == "false" ? false : true
+			@posts = Post.order(published_at: :desc).where(published: pub)
 			@title = "Posts"
+			if pub
+				@subtitle = "Showing Published Posts"
+			else
+				@subtitle = "Showing Draft Posts"
+			end
 		end
 
 		def show

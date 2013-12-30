@@ -1,5 +1,8 @@
 - content_for :links do
-	= link_to "Drafts", posts_path(published: false), class: "btn btn-default"
+	- if params[:published] == "false"
+		= link_to "Published Posts", posts_path, class: "btn btn-default"
+	- else
+		= link_to "Drafts", posts_path(published: false), class: "btn btn-default"
 	= link_to "New Post", new_post_path, class: "btn btn-default"
 
 %table.table.table-bordered.table-striped
