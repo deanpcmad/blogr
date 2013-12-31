@@ -10,6 +10,6 @@
 	%tbody
 		- @users.each do |user|
 			= content_tag_for(:tr, user) do
-				%td= link_to user.name, edit_user_path(user)
+				%td= link_to user.name, user_path(user)
 				%td= user.username
 				%td= user.email

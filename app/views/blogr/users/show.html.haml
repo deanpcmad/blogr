@@ -1,0 +1,29 @@
+- content_for :links do
+	= link_to "Edit User", edit_user_path, class: "btn btn-default"
+
+%h4 Report Card
+%ul
+	%li
+		%b Name:
+		= @user.name
+	%li
+		%b Email:
+		= @user.email
+	%li
+		%b Joined:
+		= @user.created_at.strftime("%d %B %Y")
+%hr
+%h4
+	= "#{@user.first_name}'s Posts"
+%table.table.table-bordered.table-striped
+	%thead
+		%tr
+			%th Title
+			%th Date
+			%th Published?
+	%tbody
+		- @posts.each do |post|
+			= content_tag_for(:tr, post) do
+				%td= link_to post.title, post
+				%td= post.date_parsed
+				%td= post.published

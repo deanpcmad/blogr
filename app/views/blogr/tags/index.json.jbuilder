@@ -1,0 +1,1 @@
+json.tags @tags, :id, :name, :permalink, :created_at, :updated_at

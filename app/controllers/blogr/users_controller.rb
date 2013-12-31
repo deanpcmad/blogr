@@ -3,11 +3,16 @@ require_dependency "blogr/application_controller"
 module Blogr
   class UsersController < ApplicationController
 
-  	before_action :set_user, only: [:edit, :update, :destroy]
+  	before_action :set_user, only: [:edit, :show, :update, :destroy]
 
 		def index
 			@title = "Users"
 			@users = Blogr::User.all
+		end
+
+		def show
+			@title = @user.username
+			@posts = @user.posts
 		end
 
 		def new

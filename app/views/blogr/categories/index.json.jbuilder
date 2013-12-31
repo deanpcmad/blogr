@@ -1,0 +1,1 @@
+json.categories @categories, :id, :title, :description, :permalink, :created_at, :updated_at

@@ -3,7 +3,7 @@ Blogr::Engine.routes.draw do
   resources :posts
   resources :categories
   resources :tags
-  resources :users, except: [:show]
+  resources :users
   resources :comments
 
   get "login" => "sessions#new"
