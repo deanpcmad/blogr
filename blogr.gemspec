@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency "bcrypt-ruby",     ">= 3.1.2"
   s.add_dependency "xml-simple",      ">= 1.1.3"
   s.add_dependency "reverse_markdown",">= 0.4.7"
+  s.add_dependency "jbuilder",">= 1.2"
 
   s.add_development_dependency "mysql2"
   s.add_development_dependency "rspec-rails"

@@ -1,0 +1,1 @@
+json.extract! @tag, :id, :name, :permalink, :created_at, :updated_at
