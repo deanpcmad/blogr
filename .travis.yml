@@ -15,6 +15,7 @@ script:
 
 matrix:
   allow_failures:
+    - rvm: 2.1.0
     - rvm: rbx-2.2.1
     - rvm: jruby-19mode
     - rvm: ruby-head
