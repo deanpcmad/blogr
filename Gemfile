@@ -18,6 +18,5 @@ group :development, :test do
 	gem "sass-rails"
 	gem "sqlite3"
   gem "capybara"
-  gem "capybara"
   gem "database_cleaner"
 end
