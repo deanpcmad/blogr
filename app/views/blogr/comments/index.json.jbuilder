@@ -1,0 +1,1 @@
+json.comments @comments, :id, :post_id, :user_id, :content, :author_name, :author_email, :created_at, :updated_at

@@ -1,21 +1,12 @@
 body.blogr.login
+	background-color: #293541
+	color: #606468
 	font-size: 14px
-	-webkit-font-smoothing: antialiased
-	a
-		color: #000
-	.alert
-		width: 300px
-		display: block
-		margin: 0 auto
-		margin: -50px auto 20px auto
-		text-align: center
+	line-height: 1.5em
 
 	.login_container
+		margin: 50px auto
 		width: 350px
-		position: absolute
-		top: 50%
-		left: 50%
-		margin: -180px auto 0 -170px
 		.login
 			background: #fff
 			border-radius: 10px
@@ -26,12 +17,42 @@ body.blogr.login
 				width: 200px
 				display: block
 				margin: auto
-			.btn
-				margin-top: 15px
-			input#username
-				border-bottom-left-radius: 0
-				border-bottom-right-radius: 0
-				border-bottom: 0
-			input#password
-				border-top-left-radius: 0
-				border-top-right-radius: 0
+			form
+				input
+					height: 50px
+					border: none
+					font-size: 14px
+					line-height: 1.5em
+					-webkit-appearance: none
+					display: block
+					margin: auto
+
+
+				input#username
+					background-color: #FAFAFA
+					border-radius: 0px 3px 3px 0px
+					-moz-border-radius: 0px 3px 3px 0px
+					-webkit-border-radius: 0px 3px 3px 0px
+					margin-bottom: 1em
+					width: 300px
+
+				input#password
+					background-color: #FAFAFA
+					border-radius: 0px 3px 3px 0px
+					-moz-border-radius: 0px 3px 3px 0px
+					-webkit-border-radius: 0px 3px 3px 0px
+					margin-bottom: 1em
+					width: 300px
+
+				input[type="submit"]
+					border-radius: 3px
+					-moz-border-radius: 3px
+					-webkit-border-radius: 3px
+					background-color: #e57e31
+					color: #eee
+					font-weight: bold
+					margin-bottom: 2em
+					text-transform: uppercase
+					width: 300px
+					&:hover
+						background-color: #D16D21

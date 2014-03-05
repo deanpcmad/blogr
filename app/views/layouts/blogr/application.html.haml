@@ -3,7 +3,7 @@
 	%head
 		%meta{charset: "utf-8"}/
 		%meta{content: "width=device-width, initial-scale=1.0", name: "viewport"}/
-		%title #{@title} - Blogr
+		%title #{@title} - #{Blogr.config.name}
 		= stylesheet_link_tag    "//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"
 		= stylesheet_link_tag    "blogr/application"
 		= javascript_include_tag "blogr/application"
@@ -13,7 +13,7 @@
 
 		%section.sidebar
 			.logo
-				%h1= link_to "Blogr", root_url
+				%h1= link_to "#{Blogr.config.name} ", root_url
 				.version= link_to "v#{Blogr::VERSION}", "https://github.com/blogr/engine"
 			.user
 				= gravatar(current_blogr_user.email, {size: 50, class: "avatar"})
@@ -42,7 +42,7 @@
 
 			%footer
 				%p.pull-right Powered by #{link_to "Blogr", "https://github.com/blogr/engine"} v#{Blogr::VERSION}
-				%p &copy; Blogr #{Time.now.year}
+				%p &copy; #{Blogr.config.name} #{Time.now.year}
 
 	- if Rails.env.development?
 		<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
