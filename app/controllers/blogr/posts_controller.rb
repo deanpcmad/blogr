@@ -62,7 +62,7 @@ module Blogr
 		end
 
 		def post_params
-			params.require(:post).permit(:title, :category_id, :permalink, :content, :tag_list, :published, :published_at)
+			params.require(:post).permit(:title, :category_id, :permalink, :content, :tag_list, :post_image, :published, :published_at)
 		end
 
 	end
