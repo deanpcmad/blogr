@@ -61,3 +61,15 @@ This imports categories and posts from your WordPress blog.
 ```ruby
 Blogr::Import.wordpress("path-to-your-export.xml")
 ```
+
+### Ghost
+
+This imports categories and posts from your Ghost blog.
+
+- Login to your Ghost blog, add `debug` to the end of the URL and click Export
+- Open up the Rails console - `rails console`
+- Run the importer
+
+```ruby
+Blogr::Import.ghost("path-to-your-export.json")
+```

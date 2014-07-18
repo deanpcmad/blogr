@@ -50,5 +50,32 @@ module Blogr
       end
     end
 
+    def self.ghost(path)
+      if File.exist?(path)
+        # Open the file and parse it 
+        f = File.open(path)
+        data = JSON.parse(f.read)
+
+        # Create posts
+        data["data"]["posts"].each do |p|
+          pub = p["status"] == "published" ? true : false
+          # is_post = p["page"] == 0 ? false : true
+          permalink = p["slug"]
+
+          # Convert the WordPress encoded post content to Markdown
+          content = p["markdown"]
+          
+          post = Blogr::Post.create! title: p["title"], content: content, permalink: permalink, published: pub, published_at: p["published_at"], user_id: User.first.id
+          
+          puts ">  Imported post - #{post.title}"
+        end
+
+        puts "Import Complete"
+
+      else
+        raise ImportError, "The Blogr importer couldn't file the file at #{path}"
+      end
+    end
+
   end
 end

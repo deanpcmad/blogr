@@ -11,7 +11,7 @@ module Blogr
 
     before_validation { self.permalink = title.parameterize if self.permalink.nil? }
 
-    validates_uniqueness_of :title, :permalink
+    validates_uniqueness_of :permalink
     validates_presence_of :title, :permalink, :content, :user_id
 
     scope :published, -> { where "published = ? AND published_at <= ?", true, Time.now.to_s }
