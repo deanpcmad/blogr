@@ -14,6 +14,8 @@ module Blogr
     validates_uniqueness_of :permalink
     validates_presence_of :title, :permalink, :content, :user_id
 
+    mount_uploader :post_image, PostImageUploader
+
     scope :published, -> { where "published = ? AND published_at <= ?", true, Time.now.to_s }
     scope :draft,    -> { where published: false }
 
