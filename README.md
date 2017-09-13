@@ -1,10 +1,8 @@
 # Blogr
 
-[![Build Status](https://travis-ci.org/blogr/engine.png?branch=testing)](https://travis-ci.org/blogr/engine)  [![Dependency Status](https://gemnasium.com/blogr/engine.png)](https://gemnasium.com/blogr/engine)  [![Code Climate](https://codeclimate.com/github/blogr/engine.png)](https://codeclimate.com/github/blogr/engine)  [![Coverage Status](https://coveralls.io/repos/blogr/engine/badge.png)](https://coveralls.io/r/blogr/engine)  
-
 A Rails engine for adding blogging to any Rails 4 application.
 
-*Currently in development.*
+**This project is unmaintained**
 
 Some code from [pixelbits/simpleblog](https://github.com/pixelbits/simpleblog).
 
